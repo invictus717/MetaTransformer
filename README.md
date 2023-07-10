@@ -6,13 +6,12 @@
 <div align="center">
     <a href='https://scholar.google.com/citations?hl=zh-CN&user=KuYlJCIAAAAJ/' target='_blank'>Yiyuan Zhang<sup>1,2*</sup></a>&emsp;
     <a href='https://kxgong.github.io/' target='_blank'>Kaixiong Gong<sup>1,2*</sup></a>&emsp;
-    <a href='http://kpzhang93.github.io/' target='_blank'>Kaipeng Zhang<sup>2</sup></a>&emsp;
+    <a href='http://kpzhang93.github.io/' target='_blank'>Kaipeng Zhang<sup>2,&#x2709</sup></a>&emsp;
     </br>
     <a href='http://www.ee.cuhk.edu.hk/~hsli/' target='_blank'>Hongsheng Li <sup>1,2</sup></a>&emsp;
     <a href='https://mmlab.siat.ac.cn/yuqiao/index.html' target='_blank'>Yu Qiao <sup>2</sup></a>&emsp;
     <a href='https://wlouyang.github.io/' target='_blank'>Wanli Ouyang<sup>2</sup></a>&emsp;
-    <a href='http://people.eecs.berkeley.edu/~xyyue/' target='_blank'>Xiangyu Yue<sup>1,2</sup></a>
-    <!-- <a href='https://liuziwei7.github.io/' target='_blank'>Xiangyu Yue<sup>1,2,&#x2709</sup></a> -->
+    <a href='http://people.eecs.berkeley.edu/~xyyue/' target='_blank'>Xiangyu Yue<sup>1,2,&#x2709</sup></a>
 </div>
 <div>
 <div align="center">
@@ -20,7 +19,7 @@
     <sup>2</sup>Shanghai AI Laboratory
     </br>
     <sup>*</sup> Equal Contribution&emsp;
-    <!-- <sup>&#x2709</sup> Corresponding Author -->
+    <sup>&#x2709</sup> Corresponding Author
     
 </div>
 
@@ -30,9 +29,6 @@
 [[Project Page](https://kxgong.github.io/meta_transformer/)]
 [[Blogs](https://kxgong.github.io/meta_transformer/)]
 [[中文博客](https://kxgong.github.io/meta_transformer/)]
-
-<!-- ![](https://img.shields.io/badge/MetaTransformer-darkcyan)
-![](https://black.readthedocs.io/en/stable/_static/license.svg) -->
 
 
 
@@ -56,6 +52,17 @@ After obtaining the token sequence, we employ a modality-shared encoder to extra
 
 # 🌟 News
 * **2023.7.8:** Github Repository Initialization.
+
+# 🕙 ToDo
+- [ ] Meta-Transformer with Large Language Models.
+- [ ] Multimodal Joint Training with Meta-Transformer.
+- [ ] Support More Modalities and More Tasks.
+
+# Contact
+Welcome to contribute to our project!
+
+To contact us, never hestitate to send an email to `yiyuanzhang.ai@gmail.com` ,`zhangkaipeng@pjlab.org.cn`, or `xyyue@ie.cuhk.edu.hk`!
+<br></br>
 
 # License
 This project is released under the [Apache 2.0 license](LICENSE).
