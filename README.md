@@ -21,7 +21,6 @@
     </br>
     <sup>*</sup> Equal Contribution&emsp;
     <sup>&#x2709</sup> Corresponding Author
-    
 </div>
 
 -----------------
@@ -44,6 +43,7 @@
     margin-right: px; /* 在图像右侧添加一些间距 */
   }
 </style>
+
 <div>
   <img class="image" src="assets\Meta-Transformer_teaser.png" width="52%" height="100%">
   <img class="image" src="assets\Meta-Transformer_exp.png" width="45.2%" height="100%">
