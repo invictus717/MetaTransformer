@@ -36,13 +36,6 @@
 
 ## 🚩🚩🚩 Shared-Encoder, Unpaired Data, More Modalities 
 
-<style>
-  .image {
-    display: inline-block; /* 将图像转换为行内块元素 */
-    float: center; /* 将图像向左浮动 */
-    margin-right: px; /* 在图像右侧添加一些间距 */
-  }
-</style>
 
 <div>
   <img class="image" src="assets\Meta-Transformer_teaser.png" width="52%" height="100%">
