@@ -16,8 +16,9 @@
 <div>
 
 <div align="center">
-    <sup>1</sup>CUHK MMlab&emsp;
-    <sup>2</sup>Shanghai AI Laboratory
+    <sup>1</sup>Multimedia Lab, The Chinese University of Hong Kong&emsp;
+    </br>
+    <sup>2</sup>OpenGVLab，Shanghai AI Laboratory 
     </br>
     <sup>*</sup> Equal Contribution&emsp;
     <sup>&#x2709</sup> Corresponding Author
@@ -25,10 +26,16 @@
 
 -----------------
 
-[[arXiv](https://arxiv.org/abs/2307.10802)]
-[[Project Page](https://kxgong.github.io/meta_transformer/)]
-[[Blogs](https://kxgong.github.io/meta_transformer/)]
-[[中文博客](https://kxgong.github.io/meta_transformer/)]
+[![arXiv](https://img.shields.io/badge/arxiv-2307.10802-b31b1b?style=plastic&color=b31b1b&link=https%3A%2F%2Farxiv.org%2Fabs%2F2307.10802)](https://arxiv.org/abs/2307.10802)
+[![website](https://img.shields.io/badge/Project-Website-brightgreen)](https://kxgong.github.io/meta_transformer/)
+[![blog-cn](https://img.shields.io/badge/%E6%9C%BA%E5%99%A8%E4%B9%8B%E5%BF%83-%E7%AE%80%E4%BB%8B-brightgreen)](https://kxgong.github.io/meta_transformer/)
+[![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Space-blue)](https://huggingface.co/papers/2307.10802)
+![](https://img.shields.io/github/stars/invictus717/MetaTransformer?style=social)
+<a href="https://twitter.com/_akhaliq/status/1682248055637041152"><img src="https://img.icons8.com/color/48/000000/twitter.png" width="25" height="25"></a>
+<a href="https://www.youtube.com/"><img src="https://img.icons8.com/color/48/000000/youtube-play.png" width="25" height="25"></a>
+
+
+
 
 <p align="left">
 <img src="assets\Meta-Transformer_cmp.png" width=100%>
