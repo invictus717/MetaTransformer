@@ -56,7 +56,7 @@ This repository is built to explore the potential and extensiability of transfor
 <img src="assets\Meta-Transformer_data2seq.png" width=100%>
 </p>
 
-After obtaining the token sequence, we employ a modality-shared encoder to extract representation across different modalities. With task-specific heads, Meta-Transformer can hanle various tasks on the different modalities, such as: classification, detection, and segmentation.
+After obtaining the token sequence, we employ a modality-shared encoder to extract representation across different modalities. With task-specific heads, Meta-Transformer can handle various tasks on the different modalities, such as: classification, detection, and segmentation.
 
 <p align="left">
 <img src="assets\Meta-Transformer_framework.png" width=100%>
