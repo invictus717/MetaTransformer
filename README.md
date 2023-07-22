@@ -65,8 +65,35 @@ After obtaining the token sequence, we employ a modality-shared encoder to extra
 
 
 # 🌟 News
+* **2023.7.22:** 🌟🌟🌟 Pretrained weights and a usage demo for our Meta-Transformer have been released. Comprehensive documentation and implementation of the image modality are underway and will be released soon. Stay tuned for more exciting updates!⌛⌛⌛
 * **2023.7.21:** Paper is released at [arxiv](https://arxiv.org/abs/2307.10802), and code will be gradually released.
 * **2023.7.8:** Github Repository Initialization.
+
+# 🔓 Model Zoo
+
+<details>
+<summary> Open-source Pretrained Models </summary>
+<br>
+<div>
+
+|      Model      |   Pretraining   | Scale | #Param |                                               Download                                                |
+| :------------: | :----------: | :----------------------: | :----: | :---------------------------------------------------------------------------------------------------: |
+| Meta-Transformer-B16  | LAION-2B |         Base          |  85M  |   [ckpt](https://drive.google.com/file/d/19ahcN2QKknkir_bayhTW5rucuAiX0OXq/view?usp=sharing)    |
+| Meta-Transformer-L14  | LAION-2B |         Large          |  302M  |   [ckpt](https://drive.google.com/file/d/15EtzCBAQSqmelhdLz6k880A19_RpcX9B/view?usp=drive_link)   |
+
+</div>
+
+</details>
+
+<details>
+<summary>Demo of Use for Pretrained Encoder</summary>
+
+```python
+img_model = timm.create_model("vit_base_patch16_224", pretrained = False )
+ckpt = torch.load("Meta-Transformer_large_patch14_encoder.pth")
+img_model.blocks.load_state_dict(ckpt,strict=True)
+```
+</details>
 
 # 🕙 ToDo
 - [ ] Meta-Transformer with Large Language Models.
