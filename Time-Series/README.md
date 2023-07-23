@@ -38,6 +38,16 @@ bash scripts/long_term_forecast/Weather_script/MetaTransformer.sh
 ```
 bash scripts/long_term_forecast/Exchange_script/MetaTransformer.sh
 ```
+### 4. Performance of Meta-Transformer.
+
+|      Model      |   Dataset   | MAE | #Param |                                               Logs                                                |
+| :------------: | :----------: | :----------------------: | :----: | :---------------------------------------------------------------------------------------------------: |
+| Meta-Transformer-B16  | ETTh1  |         0.797          |  19K  |   [log](https://drive.google.com/file/d/16Qad-t_C4s1zqeIPTtskO71bHCl2uyZ-/view?usp=drive_link)    |
+| Meta-Transformer-B16  | Traffic |         0.372          |  2M  |   [log](https://drive.google.com/file/d/16Qad-t_C4s1zqeIPTtskO71bHCl2uyZ-/view?usp=drive_link)   |
+| Meta-Transformer-B16  | Weather |         0.640          |  51K  |   [log](https://drive.google.com/file/d/16Qad-t_C4s1zqeIPTtskO71bHCl2uyZ-/view?usp=drive_link)   |
+| Meta-Transformer-B16  | Exchange |         0.961         |  22K  |   [log](https://drive.google.com/file/d/16Qad-t_C4s1zqeIPTtskO71bHCl2uyZ-/view?usp=drive_link)   |
+
+
 ## Citation
 
 If the code and paper are helpful for your research, please kindly cite:
