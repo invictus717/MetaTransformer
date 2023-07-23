@@ -61,7 +61,7 @@ segmentation
 *You can also modify the VARIABLE of `data_root` in configs/_base_/datasets/ade20k.py* 
 ## Training
 
-To train ViT-Adapter-L + UperNet on ADE20k on a single node with 8 gpus run:
+To train ViT-Adapter-B + UperNet on ADE20k on a single node with 8 gpus run:
 
 ```shell
 bash dist_train.sh configs/ade20k/upernet_meta_transformer_base_512_160k_ade20k.py 8

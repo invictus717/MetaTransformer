@@ -14,8 +14,8 @@ This part of code is used for image understanding, and we provide the pretrained
 
 ## Object Detection
 
-For object detection, we use the checkpoints pretraiend checkpoints for the downstream tasks. More details can be found in [this](detection\README.md)
+For object detection, we use the checkpoints pretraiend checkpoints for the downstream tasks. More details can be found in [this](https://github.com/invictus717/MetaTransformer/blob/master/Image/detection/README.md)
 
 ## Image Segmentation
 
-The document for image segmentation can be found [here](segmentation\README.md)
+The document for image segmentation can be found [here](https://github.com/invictus717/MetaTransformer/blob/master/Image/README.md)
