@@ -1,0 +1,12 @@
+{
+    "token": "E_87-d9qQuNAvY2Mznh3_A",
+    "business_flag": "TEG_AILab_CVC_chongqing",
+    "model_local_file_path": "/apdcephfs_cq3/share_1290939/yiyuanzhang/Det-Seg-Adapter/detection",
+    "host_num": 1,
+    "host_gpu_num": 8,
+    "image_full_name": "mirrors.tencent.com/yiyuan/vit_adapter_torch190_mmcv142_cpp_extension",
+    "GPUName": "A100",
+    "cuda_version": "11.0",
+    "is_elasticity": false
+}
+

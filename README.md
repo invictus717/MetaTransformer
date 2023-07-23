@@ -65,6 +65,7 @@ After obtaining the token sequence, we employ a modality-shared encoder to extra
 
 
 # 🌟 News
+* **2023.7.23:** 🎉🎉🎉 We have released the code and pretrained weights for image understanding and time-series forcasting. 
 * **2023.7.22:** 🌟🌟🌟 Pretrained weights and a usage demo for our Meta-Transformer have been released. Comprehensive documentation and implementation of the image modality are underway and will be released soon. Stay tuned for more exciting updates!⌛⌛⌛
 * **2023.7.21:** Paper is released at [arxiv](https://arxiv.org/abs/2307.10802), and code will be gradually released.
 * **2023.7.8:** Github Repository Initialization.
@@ -72,7 +73,7 @@ After obtaining the token sequence, we employ a modality-shared encoder to extra
 # 🔓 Model Zoo
 
 <details>
-<summary> Open-source Pretrained Models </summary>
+<summary> Open-source Modality-Agnostic Models </summary>
 <br>
 <div>
 
@@ -89,9 +90,19 @@ After obtaining the token sequence, we employ a modality-shared encoder to extra
 <summary>Demo of Use for Pretrained Encoder</summary>
 
 ```python
-img_model = timm.create_model("vit_base_patch16_224", pretrained = False )
-ckpt = torch.load("Meta-Transformer_large_patch14_encoder.pth")
-img_model.blocks.load_state_dict(ckpt,strict=True)
+from timm.models.vision_transformer import Block
+ckpt = torch.load("Meta-Transformer_base_patch16_encoder.pth")
+encoder = nn.Sequential(*[
+            Block(
+                dim=768,
+                num_heads=12,
+                mlp_ratio=4.,
+                qkv_bias=True,
+                norm_layer=nn.LayerNorm,
+                act_layer=nn.GELU
+            )
+            for i in range(12)])
+encoder.load_state_dict(ckpt,strict=True)
 ```
 </details>
 

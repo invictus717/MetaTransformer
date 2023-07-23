@@ -1,0 +1,4 @@
+# bash dist_train.sh configs/cascade_rcnn/cascade_mask_rcnn_deit_adapter_base_fpn_3x_coco_audio.py 8
+# bash dist_train.sh configs/cascade_rcnn/cascade_mask_rcnn_deit_adapter_base_fpn_3x_coco_random.py 8
+# bash dist_train.sh configs/cascade_rcnn/cascade_mask_rcnn_deit_adapter_base_fpn_3x_coco_static.py 8
+bash dist_train.sh configs/ade20k/upernet_deit_adapter_base_512_160k_ade20k_audio.py 8
