@@ -18,4 +18,4 @@ For object detection, we use the checkpoints pretraiend checkpoints for the down
 
 ## Image Segmentation
 
-The document for image segmentation can be found [here](https://github.com/invictus717/MetaTransformer/blob/master/Image/README.md)
+The document for image segmentation can be found [here](https://github.com/invictus717/MetaTransformer/blob/master/Image/segmentation/README.md)
