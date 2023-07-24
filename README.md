@@ -4,7 +4,7 @@
 
 <div>
 <div align="center">
-    <a href='https://scholar.google.com/citations?hl=zh-CN&user=KuYlJCIAAAAJ/' target='_blank'>Yiyuan Zhang<sup>1,2*</sup></a>&emsp;
+    <a href='https://scholar.google.com/citations?user=KuYlJCIAAAAJ&hl=en' target='_blank'>Yiyuan Zhang<sup>1,2*</sup></a>&emsp;
     <a href='https://kxgong.github.io/' target='_blank'>Kaixiong Gong<sup>1,2*</sup></a>&emsp;
     <a href='http://kpzhang93.github.io/' target='_blank'>Kaipeng Zhang<sup>2,&#x2709</sup></a>&emsp;
     </br>
@@ -72,21 +72,21 @@ After obtaining the token sequence, we employ a modality-shared encoder to extra
 
 # 🔓 Model Zoo
 
-<details>
+<!-- <details> -->
 <summary> Open-source Modality-Agnostic Models </summary>
 <br>
 <div>
 
 |      Model      |   Pretraining   | Scale | #Param |                                               Download                                                |
 | :------------: | :----------: | :----------------------: | :----: | :---------------------------------------------------------------------------------------------------: |
-| Meta-Transformer-B16  | LAION-2B |         Base          |  85M  |   [ckpt](https://drive.google.com/file/d/19ahcN2QKknkir_bayhTW5rucuAiX0OXq/view?usp=sharing)    |
+| Meta-Transformer-B16  | LAION-2B |         Base          |  85M  |   [Google Drive](https://drive.google.com/file/d/19ahcN2QKknkir_bayhTW5rucuAiX0OXq/view?usp=sharing)    |
 | Meta-Transformer-L14  | LAION-2B |         Large          |  302M  |   [ckpt](https://drive.google.com/file/d/15EtzCBAQSqmelhdLz6k880A19_RpcX9B/view?usp=drive_link)   |
 
 </div>
 
-</details>
+<!-- </details> -->
 
-<details>
+<!-- <details> -->
 <summary>Demo of Use for Pretrained Encoder</summary>
 
 ```python
@@ -104,7 +104,7 @@ encoder = nn.Sequential(*[
             for i in range(12)])
 encoder.load_state_dict(ckpt,strict=True)
 ```
-</details>
+<!-- </details> -->
 
 # 🕙 ToDo
 - [ ] Meta-Transformer with Large Language Models.
