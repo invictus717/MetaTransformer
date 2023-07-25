@@ -37,9 +37,7 @@
 
 ### 🌟 Single Foundation Model Supports A Wide Range of Applications
 
-<p align="center" width="100%">
-<img src="assets\Meta-Transformer_application.png"  width="100%" height="100%">
-</p>
+
 
 As a foundation model, Meta-Transformer can handle data from 12 modalities, which determines that it can support a wide range of applications. As shown in this figure, Meta-Transformer can provide services for downstream tasks including stock analysis 📈, weather forecasting ☀️ ☔ ☁️ ❄️ ⛄ ⚡, remote sensing 📡, autonomous driving 🚗, social network 🌍, speech recognition 🔉, etc.
 
