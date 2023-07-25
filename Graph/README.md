@@ -47,6 +47,8 @@ python setup.py build_ext --inplace
 ```
 *Note that the installation may be a little different from [TokenGT](https://github.com/jw9730/tokengt), but we've tested it.*
 
+There is no need for manually preparing data, it can be direcly downloaded and pre-processed for the first time with the [fairseq](https://github.com/facebookresearch/fairseq) library.
+
 ## Train & Evaluate Models
 * With a frozen backbone:
 ```bash
