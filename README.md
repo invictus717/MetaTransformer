@@ -26,10 +26,6 @@
 
 -----------------
 
-<p align="left">
-<img src="assets\Meta-Transformer_application.png" width=100%>
-</p>
-
 [![arXiv](https://img.shields.io/badge/arxiv-2307.10802-b31b1b?style=plastic&color=b31b1b&link=https%3A%2F%2Farxiv.org%2Fabs%2F2307.10802)](https://arxiv.org/abs/2307.10802)
 [![website](https://img.shields.io/badge/Project-Website-brightgreen)](https://kxgong.github.io/meta_transformer/)
 [![blog-cn](https://img.shields.io/badge/%E6%9C%BA%E5%99%A8%E4%B9%8B%E5%BF%83-%E7%AE%80%E4%BB%8B-brightgreen)](https://mp.weixin.qq.com/s/r38bzqdJxDZUvtDI0c9CEw)
@@ -39,6 +35,13 @@
 <a href="https://www.youtube.com/watch?v=V8L8xbsTyls&ab_channel=CSBoard"><img src="https://img.icons8.com/color/48/000000/youtube-play.png" width="25" height="25"></a>
 
 
+### 🌟 Single Foundation Model Supports A Wide Range of Applications
+
+<p align="center" width="100%">
+<img src="assets\Meta-Transformer_application.png"  width="100%" height="100%">
+</p>
+
+As a foundation model, Meta-Transformer can handle data from 12 modalities, which determines that it can also support a wide range of applications. As shown in this figure, Meta-Transformer can provide services for downstream tasks including stock analysis 📈, weather forecasting ☀️ ☔ ☁️ ❄️ ⛄ ⚡, remote sensing 📡, autonomous driving 🚗, social network 🌍, speech recognition 🔉, etc.
 
 
 <p align="left">
