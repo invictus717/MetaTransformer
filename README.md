@@ -41,7 +41,9 @@
 <img src="assets\Meta-Transformer_application.png"  width="100%" height="100%">
 </p>
 
-As a foundation model, Meta-Transformer can handle data from 12 modalities, which determines that it can also supports a wide range fo applications. As shown in this figure, Meta-Transformer can provide services for downstream tasks including stock analysis 📈, weather forecasting ☀️ ☔ ☁️ ❄️ ⛄ ⚡, remote sensing 📡, autonomous driving 🚗, social network 🌍, speech recognition 🔉, etc.
+As a foundation model, Meta-Transformer can handle data from 12 modalities, which determines that it can also support a wide range of applications. As shown in this figure, Meta-Transformer can provide services for downstream tasks including stock analysis 📈, weather forecasting ☀️ ☔ ☁️ ❄️ ⛄ ⚡, remote sensing 📡, autonomous driving 🚗, social network 🌍, speech recognition 🔉, etc.
+
+
 <p align="left">
 <img src="assets\Meta-Transformer_cmp.png" width=100%>
 </p>
