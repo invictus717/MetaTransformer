@@ -26,6 +26,10 @@
 
 -----------------
 
+<p align="left">
+<img src="assets\Meta-Transformer_application.png" width=100%>
+</p>
+
 [![arXiv](https://img.shields.io/badge/arxiv-2307.10802-b31b1b?style=plastic&color=b31b1b&link=https%3A%2F%2Farxiv.org%2Fabs%2F2307.10802)](https://arxiv.org/abs/2307.10802)
 [![website](https://img.shields.io/badge/Project-Website-brightgreen)](https://kxgong.github.io/meta_transformer/)
 [![blog-cn](https://img.shields.io/badge/%E6%9C%BA%E5%99%A8%E4%B9%8B%E5%BF%83-%E7%AE%80%E4%BB%8B-brightgreen)](https://mp.weixin.qq.com/s/r38bzqdJxDZUvtDI0c9CEw)
