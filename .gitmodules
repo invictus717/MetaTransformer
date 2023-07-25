@@ -1,0 +1,3 @@
+[submodule "Graph/fairseq"]
+	path = Graph/fairseq
+	url = https://github.com/pytorch/fairseq.git
