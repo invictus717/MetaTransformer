@@ -122,7 +122,7 @@ encoder.load_state_dict(ckpt,strict=True)
 - [ ] Support More Modalities and More Tasks.
 
 # Contact
-Welcome to contribute to our project!
+🚀🚀🚀 We aspire to shape this repository into **a formidable foundation for mainstream AI perception tasks across diverse modalities**. Your contributions can play a significant role in this endeavor, and we warmly welcome your participation in our project!
 
 To contact us, never hestitate to send an email to `yiyuanzhang.ai@gmail.com` ,`kaixionggong@gmail.com`, `zhangkaipeng@pjlab.org.cn`, or `xyyue@ie.cuhk.edu.hk`!
 <br></br>
