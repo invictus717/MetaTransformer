@@ -74,7 +74,7 @@ After obtaining the token sequence, we employ a modality-shared encoder to extra
 
 
 # 🌟 News
-* **2023.7.25:** 🎉🎉🎉 We have release well-documented code for graph data understanding. The implementation for Tabular data and point cloud will be released very soon. 
+* **2023.7.25:** 🎉🎉🎉 We have released a well-documented code for graph data understanding. The implementation for Tabular data and point cloud will be released very soon. 
 * **2023.7.23:** We have released the code and pretrained weights for image understanding and time-series forcasting. 
 * **2023.7.22:** 🌟🌟🌟 Pretrained weights and a usage demo for our Meta-Transformer have been released. Comprehensive documentation and implementation of the image modality are underway and will be released soon. Stay tuned for more exciting updates!⌛⌛⌛
 * **2023.7.21:** Paper is released at [arxiv](https://arxiv.org/abs/2307.10802), and code will be gradually released.
