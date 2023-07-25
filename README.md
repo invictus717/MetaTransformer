@@ -42,7 +42,7 @@
 As a foundation model, Meta-Transformer can handle data from 12 modalities, which determines that it can support a wide range of applications. As shown in this figure, Meta-Transformer can provide services for downstream tasks including stock analysis 📈, weather forecasting ☀️ ☔ ☁️ ❄️ ⛄ ⚡, remote sensing 📡, autonomous driving 🚗, social network 🌍, speech recognition 🔉, etc.
 
 <p align="center" width="100%">
-<img src="assets\Meta-Transformer_cmp.png"  width="100%" height="100%">
+<img src="assets\Meta-Transformer_application.png"  width="100%" height="100%">
 </p>
 
 **Table 1**: Meta-Transformer is capable of handling up to 12 modalities, including natural language <img src="assets\icons\text.jpg" width="15" height="15">, RGB images <img src="assets\icons\img.jpg" width="15" height="15">, point clouds <img src="assets\icons\pcd.jpg" width="15" height="15">, audios <img src="assets\icons\audio.jpg" width="15" height="15">, videos <img src="assets\icons\video.jpg" width="15" height="15">, tabular data <img src="assets\icons\table.jpg" width="15" height="15">, graph <img src="assets\icons\graph.jpg" width="15" height="15">, time series data <img src="assets\icons\time.jpg" width="15" height="15">, hyper-spectral images <img src="assets\icons\hyper.jpg" width="15" height="15">, IMU <img src="assets\icons\imu.jpg" width="15" height="15">, medical images <img src="assets\icons\xray.jpg" width="15" height="15">, and infrared images <img src="assets\icons\infrared.jpg" width="15" height="15">.
