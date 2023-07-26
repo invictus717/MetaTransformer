@@ -6,12 +6,12 @@
 <div align="center">
     <a href='https://scholar.google.com/citations?user=KuYlJCIAAAAJ&hl=en' target='_blank'>Yiyuan Zhang<sup>1,2*</sup></a>&emsp;
     <a href='https://kxgong.github.io/' target='_blank'>Kaixiong Gong<sup>1,2*</sup></a>&emsp;
-    <a href='http://kpzhang93.github.io/' target='_blank'>Kaipeng Zhang<sup>2,&#x2709</sup></a>&emsp;
+    <a href='http://kpzhang93.github.io/' target='_blank'>Kaipeng Zhang<sup>2,†</sup></a>&emsp;
     </br>
     <a href='http://www.ee.cuhk.edu.hk/~hsli/' target='_blank'>Hongsheng Li <sup>1,2</sup></a>&emsp;
     <a href='https://mmlab.siat.ac.cn/yuqiao/index.html' target='_blank'>Yu Qiao <sup>2</sup></a>&emsp;
     <a href='https://wlouyang.github.io/' target='_blank'>Wanli Ouyang<sup>2</sup></a>&emsp;
-    <a href='http://people.eecs.berkeley.edu/~xyyue/' target='_blank'>Xiangyu Yue<sup>1,&#x2709</sup></a>
+    <a href='http://people.eecs.berkeley.edu/~xyyue/' target='_blank'>Xiangyu Yue<sup>1,†,‡</sup></a>
 </div>
 <div>
 
@@ -21,7 +21,8 @@
     <sup>2</sup>OpenGVLab，Shanghai AI Laboratory 
     </br>
     <sup>*</sup> Equal Contribution&emsp;
-    <sup>&#x2709</sup> Corresponding Author
+    <sup>†</sup> Corresponding Author&emsp;
+    <sup>‡</sup> Project Lead&emsp;
 </div>
 
 -----------------
@@ -32,7 +33,7 @@
 [![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Space-blue)](https://huggingface.co/papers/2307.10802)
 ![](https://img.shields.io/github/stars/invictus717/MetaTransformer?style=social)
 <a href="https://twitter.com/_akhaliq/status/1682248055637041152"><img src="https://img.icons8.com/color/48/000000/twitter.png" width="25" height="25"></a>
-<a href="https://www.youtube.com/watch?v=V8L8xbsTyls&ab_channel=CSBoard"><img src="https://img.icons8.com/color/48/000000/youtube-play.png" width="25" height="25"></a> <a href='https://open.spotify.com/episode/6JJxcy2zMtTwr4jXPQEXjh'> <img src="assets\icons\podcast.jpeg" width="25" height="25"></a>
+<a href="https://www.youtube.com/watch?v=V8L8xbsTyls&ab_channel=CSBoard"><img src="https://img.icons8.com/color/48/000000/youtube-play.png" width="25" height="25"></a> <a href='https://open.spotify.com/episode/6JJxcy2zMtTwr4jXPQEXjh'> <img src="https://img.icons8.com/90ee90/spotify" width="22" height="22"></a>
 
 
 ### 🌟 Single Foundation Model Supports A Wide Range of Applications
