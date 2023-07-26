@@ -1,6 +1,6 @@
 # Meta-Transformer for Time-Series Forecasting
 
-We conduct experiments on Time-Series Forecasting based on [Time-Series-Library](https://github.com/thuml/Time-Series-Library). Thanks for their oustanding project.
+We conduct experiments on Time-Series Forecasting based on [Time-Series-Library](https://github.com/thuml/Time-Series-Library). Thanks for their outstanding project.
 ## Usage
 
 ### 1. Environment Setup.
