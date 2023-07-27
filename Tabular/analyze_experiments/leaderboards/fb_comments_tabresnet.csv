@@ -1,0 +1,87 @@
+blocks_dims,blocks_dropout,mlp_hidden_dims,mlp_activation,mlp_dropout,mlp_batchnorm,mlp_batchnorm_last,mlp_linear_first,embed_dropout,lr,batch_size,weight_decay,optimizer,lr_scheduler,base_lr,max_lr,div_factor,final_div_factor,n_cycles,val_loss_or_metric
+"[100, 100, 100]",0.1,None,relu,0.1,False,False,False,0.0,0.0005,512,0.0,Adam,CyclicLR,0.0005,0.03,25,10000.0,10.0,34.49720446268717
+"[100, 100, 100]",0.1,None,relu,0.1,False,False,False,0.0,0.0005,512,0.0,AdamW,CyclicLR,0.0005,0.03,25,10000.0,10.0,34.85203439761431
+"[100, 100, 100]",0.1,None,relu,0.1,False,False,False,0.0,0.0005,512,0.0,Adam,CyclicLR,0.0005,0.03,25,10000.0,10.0,34.95044109148857
+"[100, 100, 100]",0.1,None,relu,0.1,False,False,False,0.0,0.0005,512,0.0,Adam,CyclicLR,0.0005,0.01,25,10000.0,10.0,35.166750052036384
+"[100, 100, 100]",0.1,None,relu,0.1,False,False,False,0.0,0.0005,512,0.0,AdamW,CyclicLR,0.0005,0.01,25,10000.0,10.0,35.25029661716559
+"[200,200,200,200]",0.5,"[200,100]",relu,0.5,False,False,False,0.0,0.001,512,0.0,Adam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,35.32656813890506
+"[100, 100, 100]",0.1,None,relu,0.1,False,False,False,0.0,0.001,512,0.0,Adam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,35.557068947034004
+"[100, 100, 100]",0.1,None,relu,0.1,False,False,False,0.0,0.0005,512,0.0,AdamW,CyclicLR,0.0005,0.01,25,10000.0,10.0,35.689850733830376
+"[100, 100, 100]",0.1,None,relu,0.1,False,False,False,0.0,0.001,512,0.0,AdamW,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,35.727172166873245
+"[100, 100, 100]",0.1,None,relu,0.1,False,False,False,0.0,0.0005,512,0.0,AdamW,CyclicLR,0.0005,0.03,25,10000.0,10.0,35.80281013097518
+"[200,200,200,200]",0.5,"[200,100]",relu,0.5,True,True,False,0.0,0.001,512,0.0,AdamW,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,35.99939894064879
+"[200,200,200,200]",0.5,"[200,100]",relu,0.5,True,False,False,0.0,0.001,512,0.0,Adam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,36.03935789450621
+"[200,200,200,200]",0.4,"[200,100]",relu,0.4,False,False,False,0.0,0.001,512,0.0,Adam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,36.05056090232654
+"[200,200,200,200]",0.5,"[100,50]",relu,0.5,True,True,False,0.0,0.001,512,0.0,AdamW,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,36.05206650954027
+"[100, 100, 100]",0.1,None,relu,0.1,False,False,False,0.0,0.001,512,0.0,Adam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,36.10287059881748
+"[100, 100, 100]",0.1,None,relu,0.1,False,False,False,0.0,0.001,128,0.0,AdamW,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,36.10843297896847
+"[200,200,200,200]",0.4,"[200,100]",relu,0.4,False,False,False,0.0,0.001,512,0.0,AdamW,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,36.11567423893855
+"[200,200,200,200]",0.5,"[100,50]",relu,0.5,False,False,True,0.0,0.001,512,0.0,Adam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,36.17937621092185
+"[200,200,200,200]",0.5,"[200,100]",relu,0.5,False,False,False,0.1,0.001,512,0.0,Adam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,36.20723538521008
+"[200,200,200,200]",0.5,"[200,100]",relu,0.5,False,False,False,0.0,0.001,512,0.0,AdamW,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,36.21586119822967
+"[200,200,200,200]",0.5,"[100,50]",relu,0.5,True,False,False,0.0,0.001,512,0.0,AdamW,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,36.26628802372859
+"[100, 100, 100]",0.1,None,relu,0.1,False,False,False,0.0,0.001,256,0.0,AdamW,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,36.29926562920595
+"[100, 100, 100]",0.1,None,relu,0.1,False,False,False,0.0,0.001,512,0.0,RAdam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,36.35172643416967
+"[200,200,200,200]",0.5,"[200,100]",relu,0.5,True,True,False,0.0,0.001,512,0.0,Adam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,36.399735083946815
+same,0.2,None,relu,0.1,False,False,False,0.0,0.001,512,0.0,AdamW,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,36.44792282886994
+"[200,200,200,200]",0.5,"[200,100]",leaky_relu,0.5,False,False,False,0.0,0.001,512,0.0,AdamW,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,36.45160386501215
+"[200,200,200,200]",0.5,"[200,100]",relu,0.5,False,False,True,0.0,0.001,512,0.0,Adam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,36.56729668837328
+same,0.2,None,relu,0.1,False,False,False,0.0,0.001,512,0.0,Adam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,36.68368975321452
+"[200,200,200,200]",0.5,"[200,100]",relu,0.5,False,True,False,0.0,0.001,512,0.0,AdamW,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,36.69464365641276
+"[200,200,200,200]",0.5,"[200,100]",leaky_relu,0.5,False,False,False,0.0,0.001,512,0.0,Adam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,36.79774147424943
+"[200,200,200,200]",0.5,"[200,100]",relu,0.5,False,True,False,0.0,0.001,512,0.0,Adam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,36.85268798241248
+"[200,200,200,200]",0.5,"[200,100]",relu,0.5,False,False,True,0.0,0.001,512,0.0,AdamW,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,36.86229348794008
+"[100, 100, 100]",0.1,None,relu,0.1,False,False,False,0.0,0.001,128,0.0,Adam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,36.87241983413696
+"[100, 100, 100]",0.1,None,relu,0.1,False,False,False,0.0,0.001,512,0.0,AdamW,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,36.97333419017303
+"[200,200,200,200]",0.5,"[100,50]",relu,0.5,True,False,False,0.0,0.001,512,0.0,Adam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,37.072005198552056
+"[200,200,200,200]",0.5,"[200,100]",relu,0.5,True,False,False,0.0,0.001,512,0.0,AdamW,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,37.17047906533266
+"[100, 100, 100]",0.1,None,relu,0.1,False,False,False,0.0,0.001,256,0.0,Adam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,37.17481258587959
+same,0.2,auto,relu,0.2,False,False,False,0.0,0.001,512,0.0,AdamW,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,37.24000661801069
+same,0.1,None,relu,0.1,False,False,False,0.0,0.001,512,0.0,Adam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,37.28972322512896
+"[100, 100, 100]",0.1,None,relu,0.1,False,False,False,0.0,0.001,256,0.0,RAdam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,37.30533182926667
+"[200,200,200,200]",0.5,"[100,50]",relu,0.5,True,True,False,0.0,0.001,512,0.0,Adam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,37.34466503828
+"[100, 100, 100]",0.1,None,relu,0.1,False,False,False,0.0,0.0005,512,0.0,Adam,CyclicLR,0.0005,0.01,25,10000.0,10.0,37.352543268448265
+"[200,200,200,200]",0.5,"[100,50]",relu,0.5,False,False,True,0.0,0.001,512,0.0,AdamW,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,37.36308249449119
+"[100, 100, 100]",0.1,None,relu,0.1,False,False,False,0.0,0.0004,512,0.0,AdamW,OneCycleLR,0.001,0.03,25,1000.0,5.0,37.37260896731646
+"[50,50,50,50]",0.1,"[50,50]",relu,0.1,False,False,False,0.0,0.001,512,0.0,AdamW,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,37.42872350643842
+"[100, 100, 100]",0.1,None,relu,0.1,False,False,False,0.0,0.001,512,0.0,RAdam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,37.43442114805564
+"[100, 100, 100]",0.1,None,relu,0.1,False,False,False,0.0,0.001,256,0.0,RAdam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,37.44662377773187
+"[100, 100, 100]",0.1,None,relu,0.1,False,False,False,0.0,0.001,256,0.0,Adam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,37.48381135402582
+same,0.1,None,relu,0.1,False,False,False,0.0,0.001,512,0.0,AdamW,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,37.546223029112205
+"[50,50,50,50]",0.1,"[50,50]",relu,0.1,False,False,False,0.0,0.001,512,0.0,Adam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,37.84704922407101
+"[100, 100, 100]",0.1,None,relu,0.1,False,False,False,0.0,0.001,128,0.0,AdamW,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,38.090608993653326
+"[100, 100, 100]",0.1,None,relu,0.1,False,False,False,0.0,0.001,128,0.0,Adam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,38.16693846794867
+same,0.2,auto,relu,0.2,False,False,False,0.0,0.001,512,0.0,Adam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,38.26084107619066
+"[100, 100, 100]",0.1,None,relu,0.1,False,False,False,0.0,0.001,256,0.0,AdamW,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,38.3088203454629
+"[200,200,200,200]",0.5,"[100,50]",relu,0.5,False,False,False,0.1,0.001,512,0.0,AdamW,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,38.378251638167946
+"[200,200,200,200]",0.5,"[100,50]",relu,0.5,False,False,False,0.0,0.001,512,0.0,Adam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,38.60649666419396
+"[100, 100, 100]",0.1,None,relu,0.1,False,False,False,0.0,0.0004,512,0.0,Adam,OneCycleLR,0.001,0.03,25,1000.0,5.0,38.75301918616662
+"[200,200,200,200]",0.5,"[100,50]",relu,0.5,False,False,False,0.1,0.001,512,0.0,Adam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,38.78532507480719
+"[100, 100, 100]",0.1,None,relu,0.1,False,False,False,0.0,0.0004,512,0.0,AdamW,OneCycleLR,0.001,0.03,25,1000.0,5.0,38.81094810290215
+same,0.1,auto,relu,0.1,False,False,False,0.0,0.001,512,0.0,AdamW,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,39.02618642953726
+"[100, 100, 100]",0.1,None,relu,0.1,False,False,False,0.0,0.001,128,0.0,RAdam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,39.27155085532896
+"[200,200,200,200]",0.5,"[100,50]",leaky_relu,0.5,False,False,False,0.0,0.001,512,0.0,AdamW,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,39.308307060828575
+"[200,200,200,200]",0.5,"[200,100]",relu,0.5,False,False,False,0.1,0.001,512,0.0,AdamW,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,39.39843926062951
+same,0.1,auto,relu,0.1,False,False,False,0.0,0.001,512,0.0,Adam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,39.61965556022449
+"[100, 100, 100]",0.1,None,relu,0.1,False,False,False,0.0,0.0004,512,0.0,Adam,OneCycleLR,0.001,0.03,25,1000.0,5.0,39.64620590209961
+"[200,200,200,200]",0.5,"[100,50]",relu,0.5,False,True,False,0.0,0.001,512,0.0,AdamW,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,39.68086071503468
+"[100, 100, 100]",0.1,None,relu,0.1,False,False,False,0.0,0.001,128,0.0,RAdam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,39.79318509255686
+"[200,200,200,200]",0.5,"[100,50]",relu,0.5,False,False,False,0.0,0.001,512,0.0,AdamW,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,40.78985957610301
+"[100, 100, 100]",0.1,None,relu,0.1,False,False,False,0.0,0.0004,64,0.0,Adam,OneCycleLR,0.001,0.05,25,1000.0,5.0,40.95888392863536
+"[200,200,200,200]",0.5,"[100,50]",relu,0.5,False,True,False,0.0,0.001,512,0.0,Adam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,41.223645968314926
+"[50,50,50,50]",0.1,"[50,50]",relu,0.1,False,False,False,0.0,0.001,512,0.0,AdamW,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,42.636607145651794
+same,0.1,auto,relu,0.1,False,False,False,0.0,0.001,512,0.0,Adam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,42.96776703076485
+same,0.1,auto,relu,0.1,False,False,False,0.0,0.001,512,0.0,AdamW,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,43.20654673454089
+"[200,200,200,200]",0.5,"[100,50]",leaky_relu,0.5,False,False,False,0.0,0.001,512,0.0,Adam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,43.65329263149164
+"[100, 100, 100]",0.1,None,relu,0.1,False,False,False,0.0,0.0004,64,0.0,Adam,OneCycleLR,0.001,0.01,25,1000.0,5.0,43.88770526435383
+"[100, 100, 100]",0.1,None,relu,0.1,False,False,False,0.0,0.0004,64,0.0,Adam,OneCycleLR,0.001,0.03,25,1000.0,5.0,43.932080166239565
+same,0.2,auto,relu,0.2,False,False,False,0.0,0.001,512,0.0,Adam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,46.56148494818272
+"[100, 100, 100]",0.1,None,relu,0.1,False,False,False,0.0,0.0004,64,0.0,Adam,OneCycleLR,0.001,0.01,25,1000.0,5.0,47.4315846668478
+"[200,200,200,200]",0.4,"[200,100]",relu,0.4,False,False,False,0.0,0.001,512,0.0,AdamW,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,47.512169422247474
+"[100, 100, 100]",0.1,None,relu,0.1,False,False,False,0.0,0.0004,64,0.0,Adam,OneCycleLR,0.001,0.03,25,1000.0,5.0,47.72183450294544
+same,0.2,auto,relu,0.2,False,False,False,0.0,0.001,512,0.0,AdamW,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,48.30866984831981
+"[100, 100, 100]",0.1,None,relu,0.1,False,False,False,0.0,0.0004,64,0.0,AdamW,OneCycleLR,0.001,0.05,25,1000.0,5.0,48.76174111119366
+"[100, 100, 100]",0.1,None,relu,0.1,False,False,False,0.0,0.0004,64,0.0,AdamW,OneCycleLR,0.001,0.03,25,1000.0,5.0,51.14031494319632
+"[200,200,200,200]",0.4,"[200,100]",relu,0.4,False,False,False,0.0,0.001,512,0.0,Adam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,51.24536450703939
+"[100, 100, 100]",0.1,None,relu,0.1,False,False,False,0.0,0.0004,64,0.0,Adam,OneCycleLR,0.001,0.03,25,1000.0,5.0,52.39425956084119
+"[50,50,50,50]",0.1,"[50,50]",relu,0.1,False,False,False,0.0,0.001,512,0.0,Adam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,55.85005334707407

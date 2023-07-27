@@ -1,0 +1,10 @@
+embed_dropout,full_embed_dropout,shared_embed,add_shared_embed,frac_shared_embed,input_dim,n_heads,n_blocks,dropout,ff_hidden_dim,transformer_activation,mlp_hidden_dims,mlp_activation,mlp_batchnorm,mlp_batchnorm_last,mlp_linear_first,with_wide,lr,batch_size,weight_decay,optimizer,lr_scheduler,base_lr,max_lr,div_factor,final_div_factor,n_cycles,val_loss_or_metric
+0.0,False,False,False,8,16,4,4,0.1,,relu,None,relu,False,False,False,False,0.01,1024,0.0,Adam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5,180162.40867745536
+0.0,False,False,False,8,16,4,4,0.1,,relu,None,relu,False,False,False,False,0.01,256,0.0,Adam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5,186017.1888486695
+0.0,False,False,False,8,16,4,4,0.1,,relu,None,relu,False,False,False,False,0.01,512,0.0,Adam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5,196144.06743861607
+0.0,False,False,False,8,32,8,4,0.4,,relu,None,relu,False,False,False,False,0.01,1024,0.0,Adam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5,357869.3703125
+0.0,False,False,False,8,64,16,4,0.4,,relu,None,relu,False,False,False,False,0.01,512,0.0,Adam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5,357884.904296875
+0.0,False,False,False,8,64,16,4,0.4,,relu,None,relu,False,False,False,False,0.01,256,0.0,Adam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5,358049.97626900714
+0.0,False,False,False,8,32,8,4,0.4,,relu,None,relu,False,False,False,False,0.01,256,0.0,Adam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5,359318.4590507603
+0.0,False,False,False,8,32,8,4,0.4,,relu,None,relu,False,False,False,False,0.01,512,0.0,Adam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5,457886.8695870536
+0.0,False,False,False,8,64,16,4,0.4,,relu,None,relu,False,False,False,False,0.01,1024,0.0,Adam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5,478494.91997767857

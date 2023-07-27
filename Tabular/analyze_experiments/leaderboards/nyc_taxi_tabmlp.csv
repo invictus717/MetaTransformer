@@ -1,0 +1,41 @@
+mlp_hidden_dims,mlp_activation,mlp_dropout,mlp_batchnorm,mlp_batchnorm_last,mlp_linear_first,embed_dropout,lr,batch_size,weight_decay,optimizer,lr_scheduler,base_lr,max_lr,div_factor,final_div_factor,n_cycles,val_loss_or_metric
+auto,relu,0.1,False,False,True,0.0,0.01,1024,0.0,Adam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,79252.77857142857
+auto,relu,0.1,False,False,True,0.0,0.01,1024,0.0,AdamW,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,79440.60251116072
+auto,relu,0.1,False,False,False,0.1,0.01,1024,0.0,Adam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,79477.56534598215
+auto,relu,0.1,False,False,False,0.1,0.01,1024,0.0,AdamW,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,79710.85505022321
+auto,relu,0.1,False,False,False,0.0,0.01,1024,0.0,AdamW,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,80214.7197265625
+"[400,200,100]",relu,0.1,False,False,False,0.0,0.01,1024,0.0,Adam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,80663.42653459821
+auto,relu,0.1,False,False,False,0.0,0.01,1024,0.0,Adam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,80957.93505859375
+auto,leaky_relu,0.1,False,False,False,0.0,0.01,1024,0.0,Adam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,81502.837890625
+"[400,200]",relu,0.1,False,False,False,0.0,0.01,1024,0.0,Adam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,81623.95004185267
+auto,relu,0.1,False,True,False,0.0,0.01,1024,0.0,Adam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,81656.42045200893
+"[200, 100]",relu,0.1,False,False,False,0.0,0.01,1024,0.0,Adam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,81942.16082589286
+"[200, 100]",relu,0.1,False,False,False,0.0,0.01,1024,0.0,AdamW,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,82245.61185825893
+auto,relu,0.1,False,True,False,0.0,0.01,1024,0.0,AdamW,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,82593.37759486608
+auto,leaky_relu,0.1,False,False,False,0.0,0.01,1024,0.0,AdamW,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,82610.23722098215
+"[400,200,100]",relu,0.1,False,False,False,0.0,0.01,1024,0.0,AdamW,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,82610.50239955357
+"[400,200]",relu,0.1,False,False,False,0.0,0.01,1024,0.0,AdamW,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,82951.8607421875
+"[200, 100]",relu,0.1,False,False,False,0.0,0.01,1024,0.0,Adam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,84071.84090401785
+"[100,50]",relu,0.1,False,False,False,0.0,0.01,1024,0.0,Adam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,85494.39193638392
+"[100,50]",relu,0.1,False,False,False,0.0,0.01,1024,0.0,AdamW,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,85809.93376116072
+auto,relu,0.2,False,False,False,0.0,0.01,1024,0.0,Adam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,88032.32084263393
+auto,relu,0.2,False,False,False,0.0,0.01,1024,0.0,AdamW,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,91715.20145089286
+"[200, 100]",relu,0.1,False,False,False,0.0,0.01,1024,0.0,AdamW,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,94138.88200334822
+"[200, 100]",relu,0.1,False,False,False,0.0,0.01,1024,0.0,Adam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,95014.05452008928
+"[200, 100]",relu,0.1,False,False,False,0.0,0.01,1024,0.0,Adam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,95172.7746372768
+"[200, 100]",relu,0.1,False,False,False,0.0,0.01,1024,0.0,AdamW,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,95184.46303013392
+auto,relu,0.1,True,False,True,0.0,0.01,1024,0.0,Adam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,103377.28272879464
+auto,relu,0.1,True,False,True,0.0,0.01,1024,0.0,AdamW,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,105670.09977678572
+auto,relu,0.5,False,False,False,0.0,0.01,1024,0.0,Adam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,136322.0231863839
+auto,relu,0.2,False,False,False,0.0,0.0004,1024,0.0,Adam,OneCycleLR,0.001,0.05,25,1000.0,5.0,277066.34029017854
+auto,relu,0.2,False,False,False,0.0,0.0004,1024,0.0,AdamW,OneCycleLR,0.001,0.05,25,1000.0,5.0,279963.04921875
+auto,relu,0.2,False,False,False,0.0,0.0005,1024,0.0,Adam,CyclicLR,0.0005,0.05,25,10000.0,10.0,319289.40970982146
+auto,relu,0.2,False,False,False,0.0,0.0004,1024,0.0,Adam,OneCycleLR,0.001,0.05,25,1000.0,5.0,338808.75691964285
+auto,relu,0.2,False,False,False,0.0,0.0005,1024,0.0,AdamW,CyclicLR,0.0005,0.05,25,10000.0,10.0,357864.59720982146
+auto,relu,0.2,False,False,False,0.0,0.0004,1024,0.0,AdamW,OneCycleLR,0.001,0.05,25,1000.0,5.0,357990.0597098214
+"[200, 100]",relu,0.1,False,False,False,0.0,0.01,1024,0.0,RAdam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,360277.2606026786
+auto,relu,0.1,True,False,False,0.0,0.01,1024,0.0,AdamW,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,737554.6458984375
+auto,relu,0.1,True,True,False,0.0,0.01,1024,0.0,Adam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,1919775.227455357
+auto,relu,0.1,True,True,False,0.0,0.01,1024,0.0,AdamW,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,9628019.783091515
+auto,relu,0.1,True,False,False,0.0,0.01,1024,0.0,Adam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,217678099.5321708
+"[200, 100]",relu,0.1,False,False,False,0.0,0.05,1024,0.0,RAdam,ReduceLROnPlateau,0.001,0.01,25,10000.0,5.0,4383290371.657143
