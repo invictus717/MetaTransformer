@@ -16,10 +16,11 @@
 <div>
 
 <div align="center">
-    <sup>1</sup>Multimedia Lab, The Chinese University of Hong Kong&emsp;
+    <sup>1</sup>
+    <a href='http://mmlab.ie.cuhk.edu.hk/' target='_blank'>Multimedia Lab, The Chinese University of Hong Kong</a>&emsp;
     </br>
-    <sup>2</sup>OpenGVLab，Shanghai AI Laboratory 
-    </br>
+    <sup>2</sup> <a href='https://github.com/OpenGVLab' target='_blank'>OpenGVLab，Shanghai AI Laboratory 
+    </a></br>
     <sup>*</sup> Equal Contribution&emsp;
     <sup>†</sup> Corresponding Author&emsp;
     <sup>‡</sup> Project Lead&emsp;
