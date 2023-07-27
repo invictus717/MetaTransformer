@@ -34,7 +34,7 @@
 [![OpenXLab](https://cdn-static.openxlab.org.cn/header/openxlab_models.svg)](https://openxlab.org.cn/models/detail/zhangyiyuan/MetaTransformer)
 ![](https://img.shields.io/github/stars/invictus717/MetaTransformer?style=social)
 <a href="https://twitter.com/_akhaliq/status/1682248055637041152"><img src="https://img.icons8.com/color/48/000000/twitter.png" width="25" height="25"></a>
-<a href="https://www.youtube.com/watch?v=V8L8xbsTyls&ab_channel=CSBoard"><img src="https://img.icons8.com/color/48/000000/youtube-play.png" width="25" height="25"></a> <a href='https://huggingface.co/kxgong/Meta-Transformer'> <img src="assets\icons\huggingface.png"> </a> <a href='https://open.spotify.com/episode/6JJxcy2zMtTwr4jXPQEXjh'> <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" width="20" height="20"></a>
+<a href="https://www.youtube.com/watch?v=V8L8xbsTyls&ab_channel=CSBoard"><img src="https://img.icons8.com/color/48/000000/youtube-play.png" width="25" height="25"></a> <a href='https://huggingface.co/kxgong/Meta-Transformer'> <img src="assets\icons\huggingface.png" width="25" height="25"> </a> <a href='https://open.spotify.com/episode/6JJxcy2zMtTwr4jXPQEXjh'> <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" width="20" height="20"></a>
 
 
 ### 🌟 Single Foundation Model Supports A Wide Range of Applications
