@@ -1,3 +1,4 @@
+current_dir=$(pwd)
 mkdir raw_data
 
 # Adult Census
@@ -15,4 +16,10 @@ cd raw_data/bank_marketing
 unzip bank-additional.zip
 mv bank-additional/* .
 rm -r -f bank-additional/
+
+# get processed data
+echo "Preparing data, this might take a couple of seconds..."
+cd "$current_dir"
+python prepare_datasets/prepare_adult_income.py
+python prepare_datasets/prepare_bank_marketing.py
 
