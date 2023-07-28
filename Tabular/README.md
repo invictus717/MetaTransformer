@@ -33,7 +33,7 @@ pip install timm==0.8.0.dev0
 
 ### 2. Prepare Data
 
-The experiments are conducted on the [Adult Census](https://archive.ics.uci.edu/ml/datasets/adult) and  [Bank Marketing](https://archive.ics.uci.edu/ml/datasets/Bank+Marketing) datasets for tabular data binary classification. You can simply running the commands below to prepare the data
+The experiments are conducted on the [Adult Census](https://archive.ics.uci.edu/ml/datasets/adult) and  [Bank Marketing](https://archive.ics.uci.edu/ml/datasets/Bank+Marketing) datasets for tabular data binary classification. To prepare the data, you can easily run the following commands. The process will download the required data, organize it into the appropriate folders, and then execute the data preparation scripts to generate processed data in the "**processed_data**" folder.
 
 ```bash
 bash get_data.sh
