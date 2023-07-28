@@ -1,0 +1,1 @@
+python train.py --dataset='Indian' --flag_test=test --patches=1 --band_patches=1 --mode='ViT'
