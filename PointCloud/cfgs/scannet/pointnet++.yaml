@@ -1,0 +1,42 @@
+# Batches npoints Params.(M)      GFLOPs                                                                                               
+# 4       45056    0.966   21.67                                                                                                       
+# Throughput (ins./s): 12.896272793774534
+
+model:
+  NAME: BaseSeg
+  encoder_args:
+    NAME: PointNet2Encoder
+    in_channels: 7
+    width: null
+    strides: [4, 4, 4, 4]
+    layers: 3
+    use_res: False
+    mlps: [[[32, 32, 64]],  # stage 1: 96
+        [[64, 64, 128]], # stage 2: 256
+        [[128, 128, 256]], # stage 3: 512
+        [[256, 256, 512]]] # stage 4: 1024
+    radius: 0.05
+    num_samples: 32
+    sampler: fps
+    aggr_args:
+      NAME: 'convpool'
+      feature_type: 'dp_fj'
+      anisotropic: False
+      reduction: 'max'
+    group_args:
+      NAME: 'ballquery'
+    conv_args: 
+      order: conv-norm-act
+    act_args:
+      act: 'relu'
+    norm_args:
+      norm: 'bn'
+  decoder_args:
+    NAME: PointNet2Decoder
+    fp_mlps: [[128, 128, 128], [256, 128], [256, 256], [256, 256]]
+  cls_args:
+    NAME: SegHead
+    num_classes: 20
+    in_channels: null
+
+feature_keys: pos,x,heights

@@ -1,0 +1,70 @@
+# distributed
+dist_url: tcp://localhost:8888
+dist_backend: 'nccl'
+multiprocessing_distributed: False
+ngpus_per_node: 1
+world_size: 1
+launcher: 'mp'
+local_rank: 0
+
+use_gpu: True
+seed: null 
+
+# ---------------------------------------------------------------------------- #
+# Training cfgs
+# ---------------------------------------------------------------------------- #
+epoch: 0
+epochs: 100 
+
+ignore_index: null
+val_fn: validate
+deterministic: False
+sync_bn: False
+
+criterion_args:
+  NAME: CrossEntropy
+use_mask: False # in some datasets, requiring data mask in input
+
+grad_norm_clip: null
+layer_decay: 0 # no layer decay by default
+
+step_per_update: 1
+start_epoch: 1 
+sched_on_epoch: True
+
+# We support wandb for online results collection, please check their documentation for details: https://docs.wandb.ai/
+wandb:
+  use_wandb: False 
+
+use_amp: False
+# ---------------------------------------------------------------------------- #
+# Evaluation cfgs
+# ---------------------------------------------------------------------------- #
+use_voting: False # we do not use any voting. Voting is not a good practice 
+val_freq: 10
+
+# ---------------------------------------------------------------------------- #
+# io and misc
+# ---------------------------------------------------------------------------- #
+resume: False
+test: False 
+finetune: False 
+
+mode: train # set to test in evaluation only mode
+logname: null
+load_path: null
+
+print_freq: 50 
+save_freq: -1 # saving frequency for ckpt. -1 only saving the latest and the best.
+
+root_dir: log/
+pretrained_path: null
+
+
+# ---------------------------------------------------------------------------- #
+# data
+# ---------------------------------------------------------------------------- #
+datatransforms:
+  train: null
+  val: null
+feature_keys: pos

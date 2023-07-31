@@ -1,0 +1,26 @@
+# FLOPs	GMACs	Params.(M)
+#  4.82	 2.39	 1.803
+# Throughput (ins./s): 402.31050637074657 (v100)
+
+model: 
+  NAME: BaseCls
+  encoder_args:
+    NAME: DGCNN
+    in_channels: 4
+    channels: 64
+    n_classes: 40 
+    emb_dims: 1024
+    n_blocks: 5
+    conv: 'edge'
+    k: 20
+    dropout: 0.5
+    norm_args: {'norm': 'bn'}
+    act_args: {'act': 'leakyrelu', 'negative_slope': 0.2}
+  cls_args:
+    NAME: ClsHead
+    num_classes: 15
+    mlps: [512, 256]
+    norm_args:
+      norm: 'bn1d'
+
+

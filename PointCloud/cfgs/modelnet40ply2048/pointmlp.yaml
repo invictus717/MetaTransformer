@@ -1,0 +1,46 @@
+# GFLOPs  GMACs   Params.(M)
+#  31.36   15.61   13.239
+model:
+  NAME: PointMLP
+  in_channels: 3
+  points: 1024
+  num_classes: 40
+  embed_dim: 64
+  groups: 1
+  res_expansion: 1.0
+  activation: "relu"
+  bias: False
+  use_xyz: False
+  normalize: "anchor"
+  dim_expansion: [ 2, 2, 2, 2 ]
+  pre_blocks: [ 2, 2, 2, 2 ]
+  pos_blocks: [ 2, 2, 2, 2 ]
+  k_neighbors: [ 24, 24, 24, 24 ]
+  reducers: [ 2, 2, 2, 2 ]
+
+lr:
+  0.1
+optimizer:
+  NAME: 'momentum'
+  momentum: 0.9
+  weight_decay: 2.0e-4
+
+sched: cosine
+epochs: 300
+t_max: 300
+min_lr: 0.005
+warmup_epochs: 0  # Later change to 10?
+
+criterion_args:
+  NAME: SmoothCrossEntropy
+  label_smoothing: 0.2
+
+datatransforms:
+  train: [PointsToTensor, PointCloudScaleAndTranslate]
+  vote: [PointCloudScaleAndTranslate]
+  val: [PointsToTensor]
+  kwargs:
+    shift: [0.2, 0.2, 0.2]
+
+batch_size: 32
+val_batch_size: 64

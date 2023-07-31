@@ -1,0 +1,34 @@
+model:
+  NAME: BaseSeg
+  encoder_args:
+    NAME: PointNextEncoder
+    blocks: [1, 2, 3, 2, 2]
+    strides: [1, 4, 4, 4, 4]
+    sa_layers: 1 
+    sa_use_res: False 
+    width: 32
+    in_channels: 7
+    expansion: 4
+    radius: 0.05
+    nsample: 32
+    aggr_args:
+      feature_type: 'dp_fj'
+      reduction: 'max'
+    group_args:
+      NAME: 'ballquery'
+      normalize_dp: True
+    conv_args:
+      order: conv-norm-act
+    act_args:
+      act: 'relu'
+    norm_args:
+      norm: 'bn'
+  decoder_args:
+    NAME: PointNextDecoder
+  cls_args:
+    NAME: SegHead
+    global_feat: max # append global feature to each point feature
+    num_classes: 20 
+    in_channels: null
+    norm_args:
+      norm: 'bn'

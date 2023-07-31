@@ -1,0 +1,67 @@
+# Dataset Related
+num_points: 1024  # number of poins actually used in training and evaluation
+dataset:
+  common:
+    NAME: ModelNet40Ply2048
+    data_dir: './data/ModelNet40Ply2048'
+  train:
+    split: train
+    num_points: 1024  # in training, use sampled 1024 points for data augmentation. 
+  val:
+    split: test
+    num_points: 1024  # in testing, use uniformly pre-sampled 1024 points for evaluation (following https://github.com/lulutang0608/Point-BERT) 
+
+feature_keys: pos
+
+datatransforms:
+  train: [PointsToTensor, PointCloudScaleAndTranslate]  # rotation does not help
+  vote: [PointCloudScaleAndTranslate]
+  val: [PointsToTensor]
+  kwargs:
+    shift: [0.2, 0.2, 0.2]
+batch_size: 32
+dataloader:
+  num_workers: 6
+
+num_classes: 40
+# ---------------------------------------------------------------------------- #
+# Training cfgs
+# ---------------------------------------------------------------------------- #
+# training receipe borrowed from: https://github.com/yanx27/Pointnet_Pointnet2_pytorch
+
+# ---------------------------------------------------------------------------- #
+# Training cfgs
+# ---------------------------------------------------------------------------- #
+# this one is better. 
+sched: cosine
+epochs: 600
+warmup_epochs: 0
+min_lr: null 
+
+# Training parameters
+lr: 0.001
+optimizer:
+ NAME: 'adamw'
+ weight_decay: 0.05 
+
+grad_norm_clip: 1
+
+criterion_args:
+  NAME: SmoothCrossEntropy
+  label_smoothing: 0.2
+
+# ---------------------------------------------------------------------------- #
+# io and misc
+# ---------------------------------------------------------------------------- #
+log_dir: 'modelnet40'
+print_freq: 10
+val_freq: 1
+
+# ----------------- Model related
+val_batch_size: 64
+pretrained_path: null 
+
+wandb:
+  project: PointNeXt-ModelNet40Ply2048
+
+seed: null

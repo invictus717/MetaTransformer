@@ -1,0 +1,43 @@
+model:
+  NAME: BaseCls
+  encoder_args:
+    NAME: PointNet2Encoder
+    in_channels: 3 
+    strides: [2, 2, 2, 2]
+    blocks: [3, 3, 3, 3]
+    width: 128
+    width_scaling: 3
+    double_last_channel: False
+    layers: 3
+    use_res: True 
+    query_as_support: True
+    mlps: null 
+    stem_conv: True
+    stem_aggr: True
+    radius: 0.15
+    radius_scaling: 1.5
+    block_radius_scaling: 1.5 
+    num_samples: [[20, 36], [20, 36], [20, 36], [20, 36]] 
+    sampler: fps
+    aggr_args:
+      NAME: 'ASSA'
+      feature_type: 'assa'
+      anisotropic: True 
+      reduction: 'mean'
+    group_args:
+      NAME: 'ballquery'
+      use_xyz: True
+      normalize_dp: True
+    conv_args:
+      order: conv-norm-act
+    act_args:
+      act: 'relu'
+    norm_args:
+      norm: 'bn'
+  cls_args: 
+    NAME: ClsHead
+    num_classes: 40
+    global_feat: max,avg
+    mlps: [512, 256]
+    norm_args: 
+      norm: 'bn1d'

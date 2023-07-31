@@ -1,0 +1,35 @@
+# The implementation in DGCNN is not fast. they do not use cuda_knn
+
+# CUDA_VISIBLE_DEVICES=0 python examples/profile.py batch_size=16 num_points=15000 timing=True --cfg cfgs/s3dis/dgcnn.yaml
+# GFLOPs  GMACs   Params.(M)
+#  90.41   44.93   1.278
+# Throughput (ins./s): 8.02392738104905 
+
+
+# CUDA_VISIBLE_DEVICES=0 python examples/profile.py --cfg cfgs/s3dis/dgcnn.yaml batch_size=64 num_points=2048 model.cls_args.num_classes=50
+# # Batches npoints Params.(M)      GFLOPs
+# # 64      2048     1.288   12.38
+# Throughput (ins./s): 197.59781065810753
+
+model:
+  NAME: BaseSeg
+  encoder_args:
+    NAME: DGCNN
+    in_channels: 4
+    channels: 64
+    emb_dims: 1024
+    n_blocks: 5 
+    conv: 'edge'
+    block: 'res'
+    k: 20 
+    is_seg: True
+  cls_args:
+    NAME: SegHead
+    num_classes: 13
+    mlps: [512, 256]
+    act_args: leakyrelu
+
+batch_size: 8
+dataset:
+  train:
+    voxel_max: 10000

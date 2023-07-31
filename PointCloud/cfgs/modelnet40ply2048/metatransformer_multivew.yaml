@@ -1,0 +1,44 @@
+model:
+  NAME: BaseCls
+  encoder_args:
+    NAME: MetaTransformer_MultiView
+    num_views: 4
+    base_model_variant: vit_base_patch16_224
+    proj_args:
+      local_size: 32
+      trans_dim: 8
+      graph_dim: 64
+      imgblock_dim: 64
+      img_size: 224
+      obj_size: 224
+      num_views: 4
+      atten_fusion: True
+      imagenet_default_mean: [0.485, 0.456, 0.406]
+      imagenet_default_std: [0.229, 0.224, 0.225]
+    checkpoint_path:
+    update_type: norm
+    use_normals: False
+  cls_args: 
+    NAME: PoolingClsHead
+    num_views: 4
+    view_feature: 768
+    classes: 40
+
+criterion_args:
+  NAME: SmoothCrossEntropy
+  label_smoothing: 0.2
+
+# Optimizer
+lr: 5.0e-5
+optimizer:
+ NAME: 'adamw'
+ weight_decay: 0.05
+
+# scheduler
+epochs: 600
+sched: cosine 
+warmup_epochs: 0
+min_lr: null 
+
+wandb:
+  project: MetaTransformer_MV-modelnet40

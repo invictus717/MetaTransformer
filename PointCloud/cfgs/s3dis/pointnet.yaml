@@ -1,0 +1,26 @@
+# Batches npoints GFLOPs  GMACs   Params.(M)
+# 16      15000    35.50   17.61   3.554
+# Throughput (ins./s): 161.58460282387296
+
+# Batches npoints Params.(M)      GFLOPs
+# 64      2048     3.558   4.87
+# Throughput (ins./s): 1184.83357339522
+
+model:
+  NAME: BaseSeg
+  encoder_args:
+    NAME: PointNetEncoder
+    in_channels: 7 
+    is_seg: True
+  cls_args:
+    NAME: SegHead
+    num_classes: 13
+    mlps: [512, 256, 128, 128]
+
+datatransforms:
+  train: [ChromaticAutoContrast, PointsToTensor, PointCloudXYZAlign, ChromaticDropGPU, ChromaticNormalize]
+  val: [PointsToTensor, PointCloudXYZAlign, ChromaticNormalize]
+  vote: [ChromaticDropGPU]
+  kwargs:
+    color_drop: 0.2
+    gravity_dim: 2

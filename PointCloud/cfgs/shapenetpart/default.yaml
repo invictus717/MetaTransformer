@@ -1,0 +1,77 @@
+dataset:
+  common:
+    NAME: ShapeNetPartNormal
+    data_root: data/ShapeNetPart/shapenetcore_partanno_segmentation_benchmark_v0_normal
+    use_normal: True
+    num_points: 2048
+  train:
+    split: trainval
+  val:
+    split: test
+    presample: True
+
+num_classes: 50
+shape_classes: 16
+num_points: 2048
+normal_channel: True
+feature_keys: pos,x,heights
+
+datatransforms:
+  train: [PointsToTensor, PointCloudScaling,PointCloudCenterAndNormalize,PointCloudJitter,ChromaticDropGPU]
+  val: [PointsToTensor, PointCloudCenterAndNormalize]
+  vote: [PointCloudScaling]
+  kwargs:
+    jitter_sigma: 0.001
+    jitter_clip: 0.005
+    scale: [0.8, 1.2]
+    gravity_dim: 1
+    angle: [0, 1.0, 0]
+
+batch_size: 8
+dataloader:
+  num_workers: 6
+
+# ---------------------------------------------------------------------------- #
+# Evaluation cfgs
+# ---------------------------------------------------------------------------- #
+num_votes: 10 
+refine: True 
+
+# ---------------------------------------------------------------------------- #
+# Training cfgs
+# ---------------------------------------------------------------------------- #
+
+# lr_scheduler:
+lr: 0.001
+min_lr: null
+optimizer:
+  NAME: adamw
+  weight_decay: 1.0e-4  # the best 
+
+criterion_args:
+  NAME: Poly1FocalLoss
+
+# scheduler
+epochs: 300
+sched: multistep
+decay_epochs: [210, 270]
+decay_rate: 0.1
+warmup_epochs: 0
+
+
+sched_on_epoch: True
+
+grad_norm_clip: 1
+use_voting: False
+
+# ---------------------------------------------------------------------------- #
+# io and misc
+# ---------------------------------------------------------------------------- #
+print_freq: 10
+val_freq: 1
+
+# ----------------- Model related
+pretrained_path: null 
+
+wandb:
+  project: PointNext-ShapeNetPart

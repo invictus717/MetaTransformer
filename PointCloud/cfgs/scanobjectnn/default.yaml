@@ -1,0 +1,64 @@
+# ---------------------------------------------------------------------------- #
+# Dataset cfgs
+# ---------------------------------------------------------------------------- #
+dataset:
+  common:
+    NAME: ScanObjectNNHardest
+    data_dir: './data/ScanObjectNN/h5_files/main_split'
+  train:
+    split: train
+  val:
+    split: val
+    num_points: 1024 
+
+num_points: 1024  # the number of points passed into model
+num_classes: &nclass
+  15
+
+datatransforms:
+  train: [PointsToTensor, PointCloudScaling, PointCloudCenterAndNormalize, PointCloudRotation]
+  vote: [PointCloudRotation]
+  val: [PointsToTensor, PointCloudCenterAndNormalize]
+  kwargs:
+    scale: [0.9, 1.1]
+    angle: [0.0, 1.0, 0.0]
+    gravity_dim: 1
+
+batch_size: 32
+val_batch_size: 64 
+dataloader:
+  num_workers: 6
+
+# ---------------------------------------------------------------------------- #
+# Training cfgs
+# ---------------------------------------------------------------------------- #
+# scheduler
+criterion_args:
+  NAME: SmoothCrossEntropy
+  label_smoothing: 0.3
+
+# Optimizer
+lr: 0.002
+optimizer:
+ NAME: 'adamw'
+ weight_decay: 0.05
+
+sched: cosine
+epochs: 250
+warmup_epochs: 0
+min_lr: 1.0e-4
+t_max: 200
+
+grad_norm_clip: 10
+
+# ---------------------------------------------------------------------------- #
+# io and misc
+# ---------------------------------------------------------------------------- #
+log_dir: 'scanobjectnn'
+print_freq: 10
+val_freq: 1
+# ----------------- Model related
+pretrained_path: null 
+
+wandb:
+  project: PointNeXt-ScanObjectNN

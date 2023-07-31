@@ -1,0 +1,16 @@
+# GFLOPs  GMACs   Params.(M)
+#  0.91    0.45    3.473
+# Throughput (ins./s):4212.155113370464 
+
+model:
+  NAME: BaseCls
+  encoder_args:
+    NAME: PointNetEncoder
+    in_channels: 4
+  cls_args:
+    NAME: ClsHead
+    num_classes: 15
+    in_channels: 1024
+    mlps: [512,256]
+    norm_args: 
+      norm: 'bn1d'

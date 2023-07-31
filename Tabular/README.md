@@ -68,7 +68,7 @@ Tabular
 
 ### 3. Train Model
 
-To make the code easier to use, we provide training scrips under `run_experiments` foloders to train models:
+To make the code easier to use, we provide training scripts under `run_experiments` foloders to train models:
 
 - For Adult Census dataset
 

@@ -1,0 +1,80 @@
+# data augmentation
+dataset:
+  common:
+    NAME: ScanNet
+    data_root: data/ScanNet
+    voxel_size: 0.02
+  train:
+    split: train
+    voxel_max: 64000  # using 32000 points can make training faster but achieves ~0.5 miou lower for PointNeXt-XL 
+    loop: 6
+  val:
+    split: val
+    voxel_max: null 
+    presample: True
+  test:
+    split: val 
+    voxel_max: null
+
+no_label: False
+
+feature_keys: pos,x,heights # appending heights has insiginificant effects on ScanNet
+
+num_classes: 20 
+batch_size: 2
+val_batch_size: 1
+
+dataloader:
+  num_workers: 6
+
+datatransforms:
+  train: [RandomRotateZ, RandomScale, ChromaticAutoContrast, RandomDropFeature, NumpyChromaticNormalize]
+  val: [NumpyChromaticNormalize] 
+  test: [PointsToTensor, NumpyChromaticNormalize] 
+  vote: [ChromaticDropGPU]
+  kwargs:
+    color_drop: 0.2
+    gravity_dim: 2
+    rotate_dim: 2
+    scale: [0.8, 1.2]
+    mirror: [0.2, -1, -1]
+    angle: 1 
+    color_mean: [0.46259782, 0.46253258, 0.46253258]  # better than not add
+    color_std: [0.693565  , 0.6852543 , 0.68061745]
+
+# ---------------------------------------------------------------------------- #
+# Training cfgs
+# ---------------------------------------------------------------------------- #
+val_fn: validate
+ignore_index: -100
+epochs: 100
+
+cls_weighed_loss: False
+criterion_args:
+  NAME: CrossEntropy
+  label_smoothing: 0.0
+  ignore_index: -100
+
+optimizer:
+ NAME: 'adamw'  # better than adam
+ weight_decay: 1.0e-4 # better than 0.5
+
+# lr_scheduler:
+lr: 0.001
+min_lr: null
+
+sched: multistep
+decay_epochs: [70, 90]
+decay_rate: 0.1
+warmup_epochs: 0
+
+grad_norm_clip: 10
+use_voting: False
+# ---------------------------------------------------------------------------- #
+# io and misc
+# ---------------------------------------------------------------------------- #
+save_freq: -1 # save epoch every xxx epochs, -1 only save last and best. 
+val_freq: 1
+
+wandb:
+  project: PointNeXt-ScanNet

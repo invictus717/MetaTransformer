@@ -1,0 +1,44 @@
+# GFLOPs  GMACs   Params.(M)
+#  3.88    1.93    2.220
+# Throughput (ins./s): 262.8308528647436
+
+model: 
+  NAME: BaseCls
+  encoder_args:
+    NAME: DeepGCN
+    in_channels: 3
+    channels: 64
+    n_classes: 40 
+    emb_dims: 1024
+    n_blocks: 14
+    conv: 'edge'
+    block: 'res'
+    k: 9
+    epsilon: 0.2
+    use_stochastic: True
+    use_dilation: True 
+    dropout: 0.5
+    norm_args: {'norm': 'bn'}
+    act_args: {'act': 'relu'}
+  cls_args: 
+    NAME: ClsHead
+    num_classes: 40
+    mlps: [512, 256]
+    norm_args: 
+      norm: 'bn1d'
+lr:
+  0.1
+optimizer:
+  NAME: momentum 
+  weight_decay: 1.0e-4
+  momentum: 0.9
+  filter_bias_and_bn: False
+
+# scheduler
+sched: cosine
+epochs: 400
+warmup_epochs:  0
+warmup_lr: 1.0e-6
+min_lr: 0.001
+
+sync_bn: False

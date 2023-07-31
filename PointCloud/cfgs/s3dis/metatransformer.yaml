@@ -1,0 +1,85 @@
+model:
+  NAME: BaseSeg
+  encoder_args:
+    NAME: MetaTransformer
+    in_channels: 7
+    embed_dim: 768
+    depth: 12
+    num_heads: 12
+    mlp_ratio: 4.
+    drop_rate: 0.
+    attn_drop_rate: 0.0
+    drop_path_rate: 0.1
+    add_pos_each_block: True
+    qkv_bias: True
+    act_args:
+      act: 'gelu' # better than relu
+    norm_args:
+      norm: 'ln'
+      eps: 1.0e-6
+    embed_args:
+      NAME: P3Embed
+      feature_type: 'dp_df' # show an abaltion study of this.
+      reduction: 'max'
+      sample_ratio: 0.0625
+      normalize_dp: False 
+      group_size: 32
+      subsample: 'fps' # random, FPS
+      group: 'knn'  # change it to group args. 
+      conv_args:
+        order: conv-norm-act
+      layers: 4
+      norm_args: 
+        norm: 'ln2d'
+  decoder_args:
+    NAME: PointViTDecoder
+    channel_scaling: 1
+    global_feat: cls,max
+    progressive_input: True
+  cls_args: 
+    NAME: SegHead
+    num_classes: 13
+    in_channels: null
+    mlps: [256]
+    norm_args: 
+      norm: 'ln1d'
+
+batch_size: 8
+dataloader:
+  num_workers: 6
+
+feature_keys: pos,x,heights
+
+use_mask: True
+criterion_args:
+  NAME: CrossEntropy
+  label_smoothing: 0.2
+
+epochs: 600
+optimizer:
+ NAME: 'adamw'  # performs 1 point better than adam
+ weight_decay: 1.0e-4
+
+# lr_scheduler:
+sched: cosine
+warmup_epochs: 10
+
+lr: 1.0e-4 # LR linear rule. 0.002 for 32 batches
+min_lr: 1.0e-6
+
+grad_norm_clip: 10
+use_voting: False
+
+datatransforms:
+  train: [ChromaticAutoContrast, PointsToTensor, PointCloudScaling, PointCloudRotation, PointCloudJitter, ChromaticDropGPU, ChromaticNormalize]
+  val: [PointsToTensor, ChromaticNormalize]
+  vote: [ChromaticDropGPU]
+  kwargs:
+    color_drop: 0.2
+    gravity_dim: 2
+    scale: [0.9, 1.1]
+    jitter_sigma: 0.005
+    jitter_clip: 0.02
+    angle: [0, 0, 1]
+wandb:
+  project: MetaTransformer-S3DIS

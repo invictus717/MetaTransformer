@@ -1,0 +1,87 @@
+# GFLOPs  GMACs   Params.(M)
+#  13.16   6.50    3.027
+# Throughput (ins./s): 140.69015612196608
+model:
+  NAME: BaseSeg
+  encoder_args:
+    NAME: PointNet2Encoder
+    in_channels: 6
+    width: null
+    strides: [4, 4, 4, 4]
+    layers: 3
+    use_res: False
+    mlps: [[[16, 16, 32], [32, 32, 64]],
+           [[64, 64, 128], [64, 96, 128]],
+           [[128, 196, 256], [128, 196, 256]],
+           [[256, 256, 512], [256, 384, 512]]]
+    radius: [[0.1, 0.2], [0.2, 0.4], [0.4, 0.8], [0.8, 1.6]]
+    num_samples: [[16, 32], [16, 32], [16, 32], [16, 32]]
+    sampler: fps
+    aggr_args:
+      NAME: 'convpool'
+      feature_type: 'dp_fj'
+      reduction: 'max'
+    group_args:
+      NAME: 'ballquery'
+      use_xyz: True
+    conv_args: 
+      order: conv-norm-act
+    act_args:
+      act: 'relu'
+    norm_args:
+      norm: 'bn'
+  decoder_args:
+    NAME: PointNet2Decoder
+    fp_mlps: [[128, 128], [256, 256], [512, 512], [512, 512]] 
+  cls_args:
+    NAME: SegHead
+    num_classes: 13
+    in_channels: null
+
+# ---------------------------------------------------------------------------- #
+# Data Augmentation 
+# ---------------------------------------------------------------------------- #
+datatransforms:
+  train: [PointsToTensor, PointCloudScaling, PointCloudXYZAlign, PointCloudRotation, PointCloudJitter, ChromaticDropGPU, ChromaticNormalize]
+  val: [PointsToTensor, PointCloudXYZAlign, ChromaticNormalize]
+  vote: [ChromaticDropGPU]
+  kwargs:
+    color_drop: 0.2
+    gravity_dim: 2
+    scale: [0.9, 1.1]
+    angle: [0, 0, 1]
+    jitter_sigma: 0.005
+    jitter_clip: 0.02
+
+# ---------------------------------------------------------------------------- #
+# Training cfgs
+# ---------------------------------------------------------------------------- #
+# training receipe borrowed from: https://github.com/yanx27/Pointnet_Pointnet2_pytorch
+
+# criterion
+criterion_args:
+  NAME: CrossEntropy
+  label_smoothing: 0.0
+class_weights: null
+
+# optimization
+optimizer:
+ NAME: 'adam'
+ weight_decay: 1.0e-4
+ betas: [0.9, 0.999]
+ eps: 1.0e-8
+ momentum: 0.98
+
+# scheduler
+sched: 'step'
+decay_epochs: 10
+decay_rate: 0.7
+sched_on_epoch: True
+warmup_epochs: 0
+
+# hyperparameters
+batch_size: 16
+lr: 0.001
+min_lr: 0
+
+grad_norm_clip: 10

@@ -1,0 +1,40 @@
+# GFLOPs  GMACs   Params.(M)
+#  1.64    0.81    1.374
+
+# C=64
+# GFLOPs  GMACs   Params.(M)
+#  6.49    3.23    4.523
+# Throughput (ins./s): 2032.9397323777052
+
+model:
+  NAME: BaseCls
+  encoder_args:
+    NAME: PointNextEncoder
+    blocks: [1, 1, 1, 1, 1, 1]
+    strides: [1, 2, 2, 2, 2, 1]
+    width: 32
+    in_channels: 3 
+    radius: 0.15
+    radius_scaling: 1.5
+    sa_layers: 2
+    sa_use_res: True
+    nsample: 32
+    expansion: 4
+    aggr_args:
+      feature_type: 'dp_fj'
+      reduction: 'max'
+    group_args:
+      NAME: 'ballquery'
+      normalize_dp: True
+    conv_args:
+      order: conv-norm-act
+    act_args:
+      act: 'relu'
+    norm_args:
+      norm: 'bn'
+  cls_args: 
+    NAME: ClsHead
+    num_classes: 40
+    mlps: [512, 256]
+    norm_args: 
+      norm: 'bn1d'

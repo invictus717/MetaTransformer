@@ -1,0 +1,84 @@
+# GFLOPs  GMACs   Params.(M)
+#  36.20   18.07   115.556
+# Throughput (ins./s): 80.94901010205501
+
+model:
+  NAME: BaseSeg
+  encoder_args:
+    NAME: PointNet2Encoder
+    in_channels: 4
+    strides: [4, 4, 4, 4]
+    blocks: [3, 3, 3, 3]
+    width: 128
+    width_scaling: 3
+    double_last_channel: False
+    layers: 3
+    use_res: True 
+    query_as_support: True
+    mlps: null 
+    stem_conv: True
+    stem_aggr: True
+    radius: [[0.1, 0.2], [0.2, 0.4], [0.4, 0.8], [0.8, 1.6]]
+    num_samples: [[16, 32], [16, 32], [16, 32], [16, 32]]
+    sampler: fps
+    aggr_args:
+      NAME: 'ASSA'
+      feature_type: 'assa'
+      anisotropic: True 
+      reduction: 'mean'
+    group_args:
+      NAME: 'ballquery'
+      use_xyz: True
+      normalize_dp: True
+    conv_args:
+      order: conv-norm-act
+    act_args:
+      act: 'relu'
+    norm_args:
+      norm: 'bn'
+  decoder_args:
+    NAME: PointNet2Decoder
+    fp_mlps: [[64, 64], [128, 128], [256, 256], [512, 512]]
+  cls_args:
+    NAME: SegHead
+    num_classes: 13
+    in_channels: null
+
+# ---------------------------------------------------------------------------- #
+# Data Augmentation 
+# ---------------------------------------------------------------------------- #
+datatransforms:
+  train: [ChromaticAutoContrast, PointsToTensor, PointCloudScaling, PointCloudCenterAndNormalize, PointCloudRotation, PointCloudJitter, ChromaticDropGPU, ChromaticNormalize]
+  val: [PointsToTensor, PointCloudCenterAndNormalize, ChromaticNormalize]
+  vote: [ChromaticDropGPU]
+  kwargs:
+    color_drop: 0.2
+    gravity_dim: 2
+    scale: [0.9, 1.1]
+    angle: [0, 0, 1]
+    jitter_sigma: 0.005
+    jitter_clip: 0.02
+    normalize: False 
+
+# ---------------------------------------------------------------------------- #
+# Training cfgs
+# ---------------------------------------------------------------------------- #
+# training receipe borrowed from: https://github.com/yanx27/Pointnet_Pointnet2_pytorch
+criterion_args:
+  NAME: CrossEntropy
+  label_smoothing: 0.2
+
+optimizer:
+ NAME: 'adamw'  # performs 1 point better than adam
+ weight_decay: 1.0e-4
+
+# lr_scheduler:
+sched: cosine
+warmup_epochs: 0
+
+lr: 0.01 # LR linear rule. 0.002 for 32 batches
+min_lr: 1.0e-5 #
+
+epochs: 150
+
+batch_size: 8

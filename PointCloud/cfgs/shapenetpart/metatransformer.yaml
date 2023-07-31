@@ -1,0 +1,57 @@
+model:
+  NAME: BasePartSeg
+  encoder_args:
+    NAME: MetaTransformer
+    in_channels: 7 
+    embed_dim: 768
+    depth: 12
+    num_heads: 12
+    mlp_ratio: 4.
+    drop_rate: 0.
+    attn_drop_rate: 0.0
+    drop_path_rate: 0.1
+    add_pos_each_block: True
+    qkv_bias: True
+    act_args:
+      act: 'gelu'
+    norm_args:
+      norm: 'ln'
+      eps: 1.0e-6
+    embed_args:
+      NAME: P3Embed 
+      feature_type: 'dp_df' 
+      reduction: 'max'
+      sample_ratio: 0.0625
+      normalize_dp: False 
+      group_size: 32
+      subsample: 'fps' # random, FPS
+      group: 'knn'  # change it to group args. 
+      conv_args:
+        order: conv-norm-act
+      layers: 4
+      norm_args: 
+        norm: 'bn'
+  decoder_args:
+    NAME: PointViTPartDecoder
+    channel_scaling: 1
+    global_feat: cls,max,avg
+    progressive_input: True
+  cls_args:
+    NAME: SegHead
+    num_classes: 50
+    mlps: [256]
+    in_channels: null
+    norm_args:
+      norm: 'bn'
+
+# ---------------------------------------------------------------------------- #
+# Training cfgs
+# ---------------------------------------------------------------------------- #
+lr: 5.0e-4 # LR # best 
+# min_lr: 1.0e-6 
+optimizer:
+  NAME: adamw
+  weight_decay: 1.0e-4
+
+criterion_args:
+  NAME: Poly1FocalLoss 

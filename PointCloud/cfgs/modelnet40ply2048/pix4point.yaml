@@ -1,0 +1,62 @@
+model:
+  NAME: BaseCls
+  encoder_args:
+    NAME: PointViT
+    in_channels: 3 
+    embed_dim: 384
+    depth: 12
+    num_heads: 6
+    mlp_ratio: 4.
+    drop_rate: 0.
+    attn_drop_rate: 0.1
+    drop_path_rate: 0.0
+    qkv_bias: True
+    act_args:
+      act: 'gelu'
+    norm_args:
+      norm: 'ln'
+      eps: 1.0e-6
+    embed_args:
+      NAME: PointPatchEmbed
+      feature_type: 'dp'
+      reduction: 'max'
+      sample_ratio: 0.25  # ablation: 0.25
+      normalize_dp: False 
+      group_size: 32
+      subsample: 'fps'
+      group: 'knn'
+      norm_args: bn # ablation: in
+      conv_args:
+        order: conv-norm-act
+      layers: 4
+      channels: [128, 256, 512]
+    global_feat: cls,max,avg
+  cls_args: 
+    NAME: ClsHead 
+    num_classes: 40
+    mlps: [256, 256]
+    norm_args: 
+      norm: 'bn1d'
+
+pretrained_path: pretrained/imagenet/small_21k_224.pth
+mode: finetune_encoder
+
+
+criterion_args:
+  NAME: SmoothCrossEntropy
+  label_smoothing: 0.2
+
+# Optimizer
+lr: 5.0e-4 
+optimizer:
+ NAME: 'adamw'
+ weight_decay: 0.05
+
+# scheduler
+epochs: 300
+sched: cosine 
+warmup_epochs: 0
+min_lr: 1.0e-6 
+
+wandb:
+  project: pix4point-modelnet40

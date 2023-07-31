@@ -1,0 +1,40 @@
+# FLOPs	GMACs	Params.(M)
+#  1.71	 0.84	 1.466
+# Throughput (ins./s): 1871.6241552204262
+model:
+  NAME: BaseCls
+  encoder_args:
+    NAME: PointNet2Encoder
+    in_channels: 4
+    width: null
+    layers: 3
+    use_res: False
+    strides: [2, 4, 1]
+    mlps: [[[64, 64, 128]],  # stage 1: 96
+          [[128, 128, 256]],
+          [[256, 512, 1024]]
+          ] # stage 4: 1024
+    radius: [0.2, 0.4, null]
+    num_samples: [32, 64, null]
+    sampler: fps
+    aggr_args:
+      NAME: 'convpool'
+      feature_type: 'dp_fj'
+      anisotropic: False
+      reduction: 'max'
+    group_args:
+      NAME: 'ballquery'
+      use_xyz: True
+      normalize_dp: False
+    conv_args: 
+      order: conv-norm-act
+    act_args:
+      act: 'relu'
+    norm_args:
+      norm: 'bn'
+  cls_args: 
+    NAME: ClsHead
+    num_classes: 15
+    mlps: [512, 256]
+    norm_args: 
+      norm: 'bn1d'
