@@ -1,0 +1,137 @@
+CLASS_NAMES: ['Car']
+
+DATA_CONFIG:
+    _BASE_CONFIG_: cfgs/dataset_configs/kitti/OD/kitti_dataset.yaml
+
+    DATA_PROCESSOR:
+        -   NAME: mask_points_and_boxes_outside_range
+            REMOVE_OUTSIDE_BOXES: True
+
+        -   NAME: sample_points
+            NUM_POINTS: {
+                'train': 16384,
+                'test': 16384
+            }
+
+        -   NAME: shuffle_points
+            SHUFFLE_ENABLED: {
+                'train': True,
+                'test': False
+            }
+
+MODEL:
+    NAME: IASSD
+     
+    BACKBONE_3D:
+        NAME: IASSD_Backbone
+        SA_CONFIG:
+            # Sampling setting:
+            NPOINT_LIST: [[4096], [1024], [512], [256], [-1], [256]]
+            SAMPLE_RANGE_LIST: [[-1], [-1], [-1], [-1], [-1], [-1]]
+            SAMPLE_METHOD_LIST: &sample_method_list [['D-FPS'], ['D-FPS'], ['ctr_aware'], ['ctr_aware'], [], []]
+            # Group and Abstraction setting:
+            RADIUS_LIST: [[0.2,0.8], [0.8,1.6], [1.6,4.8], [], [], [4.8, 6.4]]
+            NSAMPLE_LIST: [[16,32], [16,32], [16,32], [], [], [16, 32]]            
+            MLPS: [[[16,16,32],  [32,32,64]],
+                   [[64,64,128],  [64,96,128]],
+                   [[128,128,256],  [128,256,256]],
+                   [],
+                   [128],
+                   [[256,256,512], [256,512,1024]]]
+            
+            LAYER_TYPE: ['SA_Layer', 'SA_Layer', 'SA_Layer', 'SA_Layer', 'Vote_Layer', 'SA_Layer']
+            DILATED_GROUP: [False, False, False, False, False, False]            
+            AGGREGATION_MLPS: [[64], [128], [256], [256], [], [512]]
+            # Instance-aware setting:
+            CONFIDENCE_MLPS: [[], [128], [256], [], [], []]
+
+            LAYER_INPUT: [0, 1, 2, 3, 4, 3]
+            CTR_INDEX: [-1, -1, -1, -1, -1, 5]
+            MAX_TRANSLATE_RANGE: [3.0, 3.0, 2.0]
+            # SAVE_SAMPLE_LIST: True
+
+    POINT_HEAD:
+        NAME: IASSD_Head
+        CLS_FC: [256, 256]
+        REG_FC: [256, 256]
+        CLASS_AGNOSTIC: False
+        USE_POINT_FEATURES_BEFORE_FUSION: False
+        TARGET_CONFIG:
+            INS_AWARE_ASSIGN: True
+            GT_EXTRA_WIDTH: [0.2, 0.2, 0.2]
+           
+            ASSIGN_METHOD:
+                NAME: 'extend_gt'
+                ASSIGN_TYPE: 'centers_origin' #'centers'(default) ,  'centers_origin'
+                EXTRA_WIDTH: [1.0, 1.0, 1.0]
+                FG_PC_IGNORE: False
+
+            BOX_CODER: PointResidual_BinOri_Coder # 'PointBinResidualCoder', 'PointResidual_BinOri_Coder' 
+            BOX_CODER_CONFIG: {
+                'angle_bin_num': 12,
+                'use_mean_size': True,                
+                'mean_size': [
+                    [3.9, 1.6, 1.56],
+                    [0.8, 0.6, 1.73],
+                    [1.76, 0.6, 1.73]
+                ]
+            }
+
+        LOSS_CONFIG:
+            # Ref: 'WeightedBinaryCrossEntropy', 'WeightedCrossEntropy', 'FocalLoss'
+            LOSS_CLS: WeightedCrossEntropy
+            LOSS_REG: WeightedSmoothL1Loss
+            LOSS_INS: WeightedCrossEntropy
+            SAMPLE_METHOD_LIST: *sample_method_list
+            LOSS_VOTE_TYPE: 'none'  #'none', 'ver1', 'ver2', 
+
+            CORNER_LOSS_REGULARIZATION: True
+            CENTERNESS_REGULARIZATION: True
+            CENTERNESS_REGULARIZATION_SA: True
+            LOSS_WEIGHTS: {
+                'ins_aware_weight': [0, 1.0, 1.0],
+                'vote_weight': 1.0,
+                'point_cls_weight': 1.0,
+                'point_box_weight': 1.0,
+                'corner_weight': 1.0,
+                'code_weights': [1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+                'dir_weight': 0.2
+            }
+
+
+    POST_PROCESSING:
+        RECALL_MODE: 'normal'  # 'normal'(default), 'detail', 'speed'(no recall info)
+        RECALL_THRESH_LIST: [0.3, 0.5, 0.7]
+        SCORE_THRESH: 0.1
+        OUTPUT_RAW_SCORE: False
+
+        EVAL_METRIC: kitti
+
+        NMS_CONFIG:
+            MULTI_CLASSES_NMS: False
+            NMS_TYPE: nms_gpu
+            NMS_THRESH: 0.01
+            NMS_PRE_MAXSIZE: 4096
+            NMS_POST_MAXSIZE: 500
+
+
+OPTIMIZATION:
+    BATCH_SIZE_PER_GPU: 8
+    NUM_EPOCHS: 80
+
+    OPTIMIZER: adam_onecycle
+    LR: 0.01
+    WEIGHT_DECAY: 0.01
+    MOMENTUM: 0.9
+
+    MOMS: [0.95, 0.85]
+    PCT_START: 0.4
+    DIV_FACTOR: 10
+    DECAY_STEP_LIST: [35, 45]
+    LR_DECAY: 0.1
+    LR_CLIP: 0.0000001
+
+    LR_WARMUP: False
+    WARMUP_EPOCH: 1
+
+    GRAD_NORM_CLIP: 10

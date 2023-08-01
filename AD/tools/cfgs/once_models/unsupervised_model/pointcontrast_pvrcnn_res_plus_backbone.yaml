@@ -1,0 +1,91 @@
+CLASS_NAMES: ['Vehicle', 'Pedestrian', 'Cyclist']
+
+USE_PRETRAIN_MODEL: False
+
+DATA_CONFIG:
+    _BASE_CONFIG_: cfgs/dataset_configs/once/PRETRAIN/unsupervised_once_dataset.yaml
+    UNLABELED_DATA_FOR: ['teacher', 'student']
+    DATA_SPLIT: {
+      'train': train,
+      'test': val,
+      'raw': raw_small,
+    }
+
+    USE_PAIR_PROCESSOR: True
+
+    TEACHER_AUGMENTOR:
+      DISABLE_AUG_LIST: ['random_world_scaling']
+      AUG_CONFIG_LIST:
+        - NAME: random_world_scaling
+          WORLD_SCALE_RANGE: [0.95, 1.05]
+
+    STUDENT_AUGMENTOR:
+      DISABLE_AUG_LIST: ['placeholder']
+      AUG_CONFIG_LIST:
+        - NAME: random_world_flip
+          ALONG_AXIS_LIST: ['x', 'y']
+
+        - NAME: random_world_rotation
+          WORLD_ROT_ANGLE: [-0.78539816, 0.78539816]
+
+        - NAME: random_world_scaling
+          WORLD_SCALE_RANGE: [0.95, 1.05]
+
+OPTIMIZATION:
+    NUM_EPOCHS: 15
+    OPTIMIZER: adam_onecycle
+    LR: 0.001
+    WEIGHT_DECAY: 0.01
+    MOMENTUM: 0.9
+    MOMS: [0.95, 0.85]
+    PCT_START: 0.4
+    DIV_FACTOR: 10
+    DECAY_STEP_LIST: [35, 45]
+    LR_DECAY: 0.1
+    LR_CLIP: 0.0000001
+    LR_WARMUP: False
+    WARMUP_EPOCH: -1
+    GRAD_NORM_CLIP: 10
+
+    LOSS_CFG:
+        POS_THRESH: 0.1
+        NEG_THRESH: 1.4
+        SA_LAYER: 
+          x_conv3:
+              DOWNSAMPLE_FACTOR: 4
+              POOL_RADIUS: [1.2]
+              NSAMPLE: [16]
+
+          x_conv4:
+              DOWNSAMPLE_FACTOR: 8
+              POOL_RADIUS: [2.4]
+              NSAMPLE: [16]
+
+        FEATURES_SOURCE: ['bev']
+        POINT_SOURCE: raw_points
+        NUM_KEYPOINTS: 2048
+        NUM_NEGATIVE_KEYPOINTS: 1024
+    TEST:
+        BATCH_SIZE_PER_GPU: 4
+
+MODEL:
+    NAME: PVRCNN_PLUS_BACKBONE
+
+    VFE:
+        NAME: MeanVFE
+
+    BACKBONE_3D:
+        NAME: VoxelResBackBone8x
+
+    MAP_TO_BEV:
+        NAME: HeightCompression
+        NUM_BEV_FEATURES: 256
+
+    # BACKBONE_2D:
+    #     NAME: BaseBEVBackbone
+
+    #     LAYER_NUMS: [5, 5]
+    #     LAYER_STRIDES: [1, 2]
+    #     NUM_FILTERS: [128, 256]
+    #     UPSAMPLE_STRIDES: [1, 2]
+    #     NUM_UPSAMPLE_FILTERS: [256, 256]
