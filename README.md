@@ -130,6 +130,7 @@ encoder.load_state_dict(ckpt,strict=True)
 To contact us, never hestitate to send an email to `yiyuanzhang.ai@gmail.com` ,`kaixionggong@gmail.com`, `zhangkaipeng@pjlab.org.cn`, or `xyyue@ie.cuhk.edu.hk`!
 <br></br>
 
+&ensp;
 # Citation
 If the code and paper help your research, please kindly cite:
 ```
