@@ -15,7 +15,7 @@ This part of code is for autonomous driving with Meta-Transfomrer. We aim to pro
 
 
 ## :muscle: TODO List :muscle:
-- [ ] Add the pretraining model and usage method of ViT-based autonomous driving models.
+- [ ] Add the pretraining checkpoint and usage method of ViT-based autonomous driving models.
 
 ## Installation for Meta-Transformer on Autonomous Driving
 
@@ -112,10 +112,12 @@ sh scripts/slurm_test_mdb_mgpu.sh ${PARTITION} ${JOB_NAME} ${NUM_NODES} \
 ## Visualization Tools for Autonomous Driving Task
 
 - Our repository supports the sequence-level visualization function [Quick Sequence Demo](docs/QUICK_SEQUENCE_DEMO.md) to continuously display the prediction results of ground truth of a selected scene.
-<p align="center">
-  <img src="docs/sequence_demo.gif" width="70%">
-</p>
 
+- **Visualization Demo**: 
+  - [Waymo Sequence-level Visualization Demo1](docs/seq_demo_waymo_bev.gif)
+  - [Waymo Sequence-level Visualization Demo2](docs/seq_demo_waymo_fp.gif)
+  - [nuScenes Sequence-level Visualization Demo](docs/seq_demo_nusc.gif)
+  - [ONCE Sequence-level Visualization Demo](docs/seq_demo_once.gif)
 
 
 ## Citation
