@@ -1,6 +1,6 @@
-# Meta-Transformer for Autonomous Driving
+# Meta-Transformer for Autonomous Driving (AD)
 
-This part of code is for autonomous driving with Meta-Transfomrer. We aim to provide a powerful baseline to handle joint-dataset training on autonomous driving community. Our code is developed based on [3DTrans](https://github.com/PJLab-ADG/3DTrans). 
+This part of code is for Autonomous Driving (AD) with Meta-Transfomrer. We aim to provide a powerful baseline to handle joint-dataset training on autonomous driving community. Our code is developed based on [3DTrans](https://github.com/PJLab-ADG/3DTrans). 
 
 ## ✨✨✨ Features
 
