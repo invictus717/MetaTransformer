@@ -116,7 +116,7 @@ CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 python examples/segmentation/main.py --cfg 
 - For Object Segmentation on the ShapeNetPart dataset:
 
 ```bash
-CUDA_VISIBLE_DEVICES=0,1,2,3 python examples/shapenetpart/main.py --cfg cfgs/shapenetpart/metatransformer.yam
+CUDA_VISIBLE_DEVICES=0,1,2,3 python examples/shapenetpart/main.py --cfg cfgs/shapenetpart/metatransformer.yaml
 ```
 
 *Note that we use the NVIDIA A100 GPU for experiments. Therefore, please according to your device to set hyper-parameters.*

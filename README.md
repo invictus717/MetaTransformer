@@ -77,7 +77,7 @@ After obtaining the token sequence, we employ a modality-shared encoder to extra
 
 
 # 🌟 News
-* **2023.7.28:** 🎉🎉🎉 We have released a well-documented code for graph, tabular, X-Ray, and hyper-spectrum data understanding. *We will release code of MetaTransformer for autonomous driving and point cloud understanding tasks very soon.*
+* **2023.8.2:** 🎉🎉🎉 The implementation of Meta-Transformer for image, point cloud, graph, tabular, time-series, X-Ray, hyper-spectrum, graph, LiDAR data has been released. We also release a very powerful foundation model for Autonomous Driving. 
 * **2023.7.23:** We have released the code and pretrained weights for image understanding and time-series forcasting. 
 * **2023.7.22:** 🌟🌟🌟 Pretrained weights and a usage demo for our Meta-Transformer have been released. Comprehensive documentation and implementation of the image modality are underway and will be released soon. Stay tuned for more exciting updates!⌛⌛⌛
 * **2023.7.21:** Paper is released at [arxiv](https://arxiv.org/abs/2307.10802), and code will be gradually released.

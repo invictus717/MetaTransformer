@@ -9,6 +9,8 @@ This part of code is for Autonomous Driving (AD) with Meta-Transfomrer. We aim t
 
 ## 🔓 Model Zoo
 
+🚀 🚀 🚀 Powerful Backbone for 3D LiDAR-based Object Detection!
+  
 [VoxelResBackBone8x: Jointly trained on Waymo and nuScenes](https://drive.google.com/file/d/1CveuI5XU4drfEatQxS-_hV744XqbyPDK/view).
 
 [VoxelResBackBone8x: Pre-trained on ONCE dataset (1M point data)](https://drive.google.com/file/d/1MG7rZu19oFHi2fZs4xA_Ts1tMzPV8yEi/view?usp=drive_link).
