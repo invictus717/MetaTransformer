@@ -24,7 +24,13 @@ If the code is helpful for your research, please kindly cite:
 
 Install [MMDetection v2.22.0](https://github.com/open-mmlab/mmdetection/tree/v2.22.0).
 
-*We recommended environment: torch1.9 + cuda11.1 for image segmentation and detection tasks.* 
+*We have provided the yaml file for a quick start*:
+```bash
+conda env create -f ../environment.yaml
+conda activate mt-seg
+```
+
+Or you can also run the commands below to mannualy set up the environments.
 
 ```
 # recommended environment: torch1.9 + cuda11.1
@@ -36,6 +42,7 @@ pip install mmdet==2.22.0
 pip install instaboostfast # for htc++
 cd ops & sh make.sh # compile deformable attention
 ```
+*We recommended environment: torch1.9 + cuda11.1 for image segmentation and detection tasks.* 
 
 ## Data Preparation
 

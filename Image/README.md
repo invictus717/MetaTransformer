@@ -2,6 +2,14 @@
 
 This part of code is used for image understanding, and we provide the pretrained checkpoints.
 
+## Environment Setup 
+
+*We have provided the yaml file for a quick start*
+```bash
+conda env create -f environment.yaml
+conda activate mt-seg
+```
+
 ## Image Classification
 <div>
 

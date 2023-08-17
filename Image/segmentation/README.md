@@ -24,7 +24,13 @@ If the code is helpful for your research, please kindly cite:
 
 Install [MMSegmentation v0.20.2](https://github.com/open-mmlab/mmsegmentation/tree/v0.20.2).
 
-*We recommended environment: torch1.9 + cuda11.1 for image segmentation and detection tasks.* 
+*We have provided the yaml file for a quick start*:
+```bash
+conda env create -f ../environment.yaml
+conda activate mt-seg
+```
+
+Or you can also run the commands below to mannualy set up the environments.
 ```
 pip install torch==1.9.0+cu111 torchvision==0.10.0+cu111 torchaudio==0.9.0 -f https://download.pytorch.org/whl/torch_stable.html
 pip install mmcv-full==1.4.2 -f https://download.openmmlab.com/mmcv/dist/cu111/torch1.9.0/index.html
@@ -33,7 +39,7 @@ pip install mmengine
 pip install mmsegmentation==0.20.2
 cd ops & sh make.sh # compile deformable attention
 ```
-
+*We recommended environment: torch1.9 + cuda11.1 for image segmentation and detection tasks.* 
 ## Data Preparation
 
 Preparing ADE20K/Cityscapes/COCO Stuff/Pascal Context according to the [guidelines](https://github.com/open-mmlab/mmsegmentation/blob/master/docs/en/dataset_prepare.md#prepare-datasets) in MMSegmentation.
