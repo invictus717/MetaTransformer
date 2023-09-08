@@ -134,12 +134,12 @@ To contact us, never hestitate to send an email to `yiyuanzhang.ai@gmail.com` ,`
 # Citation
 If the code and paper help your research, please kindly cite:
 ```
-@article{zhang2023metatransformer,
-        title={Meta-Transformer: A Unified Framework for Multimodal Learning}, 
-        author={Zhang, Yiyuan and Gong, Kaixiong and Zhang, Kaipeng and Li, Hongsheng and Qiao, Yu and Ouyang, Wanli and Yue, Xiangyu},
-        year={2023},
-        journal={arXiv preprint arXiv:2307.10802},
-  }
+@article{zhang2023meta,
+  title={Meta-transformer: A unified framework for multimodal learning},
+  author={Zhang, Yiyuan and Gong, Kaixiong and Zhang, Kaipeng and Li, Hongsheng and Qiao, Yu and Ouyang, Wanli and Yue, Xiangyu},
+  journal={arXiv preprint arXiv:2307.10802},
+  year={2023}
+}
 ```
 # License
 This project is released under the [Apache 2.0 license](LICENSE).
