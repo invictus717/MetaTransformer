@@ -53,7 +53,7 @@ mkdir -p $exp_dir
 
 python ./prep_sc.py
 
-CUDA_VISIBLE_DEVICES=1,3,4,5 python -W ignore ../../src/run.py --model ${model} --dataset ${dataset} \
+CUDA_VISIBLE_DEVICES=0,1,2,3 python -W ignore ./src/run.py --model ${model} --dataset ${dataset} \
 --data-train ${tr_data} --data-val ${val_data} --data-eval ${eval_data} --exp-dir $exp_dir \
 --label-csv ./data/speechcommands_class_labels_indices.csv --n_class 35 \
 --lr $lr --n-epochs ${epoch} --batch-size $batch_size --save_model False \
