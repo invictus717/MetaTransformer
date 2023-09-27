@@ -100,9 +100,16 @@ After obtaining the token sequence, we employ a modality-shared encoder to extra
 <!-- </details> -->
 
 <!-- <details> -->
-<summary>Demo of Use for Pretrained Encoder</summary>
+* Demo of Use for Pretrained Encoder
 
 ```python
+From Data2Seq import Data2Seq
+video_tokenier = Data2Seq(modality='video',dim=768)
+audio_tokenier = Data2Seq(modality='audio',dim=768)
+time_series_tokenier = Data2Seq(modality='time-series',dim=768)
+
+features = torch.concat([video_tokenizer(video), audio_tokenizer(audio), time_series_tokenizer(time_data)],dim=1)
+
 from timm.models.vision_transformer import Block
 ckpt = torch.load("Meta-Transformer_base_patch16_encoder.pth")
 encoder = nn.Sequential(*[
@@ -116,6 +123,7 @@ encoder = nn.Sequential(*[
             )
             for i in range(12)])
 encoder.load_state_dict(ckpt,strict=True)
+encoded_features = encoder(features)
 ```
 <!-- </details> -->
 
