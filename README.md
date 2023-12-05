@@ -38,6 +38,14 @@
 <a href="https://www.youtube.com/watch?v=V8L8xbsTyls&ab_channel=CSBoard"><img src="https://img.icons8.com/color/48/000000/youtube-play.png" width="25" height="25"></a> <a href='https://huggingface.co/kxgong/Meta-Transformer'> <img src="assets\icons\huggingface.png" width="25" height="25"> </a> <a href='https://open.spotify.com/episode/6JJxcy2zMtTwr4jXPQEXjh'> <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" width="20" height="20"></a>
 
 
+## Meta-Transformer with Large Language Models ✨✨✨
+
+We're thrilled to present [OneLLM](https://github.com/csuhan/OneLLM), ensembling Meta-Transformer framework with Multimodal Large Language Models, which performs multimodal joint training🚀, supports more modalities including fMRI, Depth and Normal Maps 🚀, and demonstrates very impressive performances on **25** benchmarks🚀🚀🚀. 
+
+🔥🔥 The code, pretrained models, and datasets are publicly available at [OneLLM](https://github.com/csuhan/OneLLM).
+
+🔥🔥 Project Website is at [OneLLM](https://onellm.csuhan.com/).
+
 ### 🌟 Single Foundation Model Supports A Wide Range of Applications
 
 
@@ -77,9 +85,9 @@ After obtaining the token sequence, we employ a modality-shared encoder to extra
 
 
 # 🌟 News
-* **2023.8.17:** Release code to directly get embeddings from multiple modalities. We will further release code on utilizing Meta-Transformer for Human-Centric vision tasks ⭐⭐⭐.
+* **2023.8.17:** Release code to directly get embeddings from multiple modalities. We will further release code on utilizing Meta-Transformer for Human-Centric vision tasks.
 * **2023.8.2:** 🎉🎉🎉 The implementation of Meta-Transformer for image, point cloud, graph, tabular, time-series, X-Ray, hyper-spectrum, LiDAR data has been released. We also release a very powerful foundation model for Autonomous Driving 🚀🚀🚀.  
-* **2023.7.22:** 🌟🌟🌟 Pretrained weights and a usage demo for our Meta-Transformer have been released. Comprehensive documentation and implementation of the image modality are underway and will be released soon. Stay tuned for more exciting updates!⌛⌛⌛
+* **2023.7.22:** Pretrained weights and a usage demo for our Meta-Transformer have been released. Comprehensive documentation and implementation of the image modality are underway and will be released soon. Stay tuned for more exciting updates!⌛⌛⌛
 * **2023.7.21:** Paper is released at [arxiv](https://arxiv.org/abs/2307.10802), and code will be gradually released.
 * **2023.7.8:** Github Repository Initialization.
 
@@ -143,9 +151,9 @@ encoded_features = encoder(features)
 <!-- </details> -->
 
 # 🕙 ToDo
-- [ ] Meta-Transformer with Large Language Models.
-- [ ] Multimodal Joint Training with Meta-Transformer.
-- [ ] Support More Modalities and More Tasks.
+- [ x ] Meta-Transformer with Large Language Models.
+- [ x ] Multimodal Joint Training with Meta-Transformer.
+- [ x ] Support More Modalities and More Tasks.
 
 # Contact
 🚀🚀🚀 We aspire to shape this repository into **a formidable foundation for mainstream AI perception tasks across diverse modalities**. Your contributions can play a significant role in this endeavor, and we warmly welcome your participation in our project!
